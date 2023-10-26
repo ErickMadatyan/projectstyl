@@ -11,7 +11,7 @@
     <input type="text" name="email" placeholder="Email...">
     <input type="text" name="uid" placeholder="Username...">
     <input type="password" name="pwd" placeholder="Password...">
-    <input type="password" name="pwdrepeat" placeholder="Repeat Password...">
+    <input type="password" name="pwdRepeat" placeholder="Repeat Password...">
     <button type="submit" name="submit">
       Sign Up
     </button>
