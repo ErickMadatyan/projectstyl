@@ -42,7 +42,7 @@
 <!------------ Side Navigation -------------> 
     <div class="sidenavcontent">
       <div class="sidenav">
-          <a href="explore.html" class="nav-link">
+          <a href="index.php" class="nav-link">
             <div class="nav-box">
                 <span>Home</span>
             </div></a>
