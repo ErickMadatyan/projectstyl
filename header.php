@@ -46,7 +46,7 @@
             <div class="nav-box">
                 <span>Home</span>
             </div></a>
-          <a href="explore.html" class="nav-link">
+          <a href="explore.php" class="nav-link">
             <div class="nav-box">
                 <span>Explore</span>
             </div></a>
