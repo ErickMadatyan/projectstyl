@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,9 +26,16 @@
       <button id="searchButton">Search</button>     
     </div>
       <div class="right">
-        <a href="signup.php" id="loginButton">Sign Up</a>
-        <a href="login.php" id="loginButton">Login</a>
-
+        <?php
+          if(isset($_SESSION["useruid"])) {
+            echo "<a href="profile.php" id="loginButton">Profile Page</a>";
+            echo "<a href="logout.php" id="loginButton">Log Out</a>";
+          }
+          else {
+            echo "<a href="signup.php" id="loginButton">Sign Up</a>";
+            echo "<a href="login.php" id="loginButton">Login</a>";
+          }
+        ?>
       </div>
   </div>
     
