@@ -58,7 +58,7 @@
             <div class="nav-box">
                 <span>Your Profile</span>
             </div></a>
-                  <a href="settings.html" class="nav-link">
+                  <a href="settings.php" class="nav-link">
             <div class="nav-box">
                 <span>Settings</span>
             </div></a>
