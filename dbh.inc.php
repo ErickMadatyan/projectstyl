@@ -1,5 +1,5 @@
 <?php
-$serverName = "13.59.172.129";
+$serverName = "localhost";
 $dBUsername = "root";
 $dbPassword = "Dark30death";
 $dBName = "projectstyldb";
