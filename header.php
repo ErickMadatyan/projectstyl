@@ -28,12 +28,12 @@
       <div class="right">
         <?php
           if(isset($_SESSION["useruid"])) {
-            echo "<a href="profile.php" id="loginButton">Profile Page</a>";
-            echo "<a href="logout.php" id="loginButton">Log Out</a>";
+            echo '<a href="profile.php" id="loginButton">Profile Page</a>';
+            echo '<a href="logout.php" id="loginButton">Log Out</a>';
           }
           else {
-            echo "<a href="signup.php" id="loginButton">Sign Up</a>";
-            echo "<a href="login.php" id="loginButton">Login</a>";
+            echo '<a href="signup.php" id="loginButton">Sign Up</a>';
+            echo '<a href="login.php" id="loginButton">Login</a>';
           }
         ?>
       </div>
