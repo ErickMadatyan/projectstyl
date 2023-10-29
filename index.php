@@ -22,7 +22,7 @@
 
               <?php
           if(isset($_SESSION["useruid"])) {
-            echo "<p>Hello There" . $_SESSION["useruid"] . "</p>";
+            echo "<p>Hello There " . $_SESSION["useruid"] . "</p>";
           }
         ?>
 
