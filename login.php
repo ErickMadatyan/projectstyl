@@ -4,7 +4,7 @@
 <!------------ CONTENT ------------->   
 <section class="signup-form">
 <h2>
-  Sign Up
+  Log In
   </h2>
   <form action="login.inc.php" method="post">
     <input type="text" name="name" placeholder="Username/Email...">
