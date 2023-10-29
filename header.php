@@ -50,7 +50,7 @@
             <div class="nav-box">
                 <span>Explore</span>
             </div></a>
-                  <a href="upload.html" class="nav-link">
+                  <a href="upload.php" class="nav-link">
             <div class="nav-box">
                 <span>Create Outfit</span>
             </div></a>
