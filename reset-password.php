@@ -9,7 +9,7 @@
   <p>An E-mail will be sent with instructions to reset your password</p>
   <form action="reset-request.inc.php" method="post">
     <input type="text" name="email" placeholder="Enter your E-mail Address...">
-    <button type="submit" name="reset-request-submit">Receive New Password By Email</button>
+    <button type="submit" name="reset-request-submit">Submit Password Reset</button>
   </form>
 
 </section>
