@@ -41,6 +41,7 @@
     }
   }
 ?>
+    <a href="reset-password.php">Forgot Your Password?</a>
 </section>
 
 
