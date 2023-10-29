@@ -54,7 +54,7 @@
             <div class="nav-box">
                 <span>Create Outfit</span>
             </div></a>
-                  <a href="profile.html" class="nav-link">
+                  <a href="profile.php" class="nav-link">
             <div class="nav-box">
                 <span>Your Profile</span>
             </div></a>
