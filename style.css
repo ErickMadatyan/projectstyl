@@ -169,12 +169,13 @@ footer{
 .right {
   flex: 1; /* Takes up available space on the right */
   text-align: right; /* Right-align the login button */
-  padding: 20px;
+  padding: 10px;
 }
 /* Style for the login button */
 .right a {
   color: #ffffff;
   text-decoration: none;
+  margin-right: 20px; /* Add 10px of space between items */
 }
 .right a:hover {
   color: #ff5722;
