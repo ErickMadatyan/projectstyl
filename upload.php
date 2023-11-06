@@ -40,31 +40,22 @@
 <!------------ Side Navigation -------------> 
     <div class="sidenavcontent">
       <div class="sidenav">
-          <a href="index.html" class="nav-link">
+          <a href="index.php" class="nav-link">
             <div class="nav-box">
                 <span>Home</span>
             </div></a>
-          <a href="explore.html" class="nav-link">
+          <a href="explore.php" class="nav-link">
             <div class="nav-box">
                 <span>Explore</span>
             </div></a>
-                  <a href="upload.html" class="nav-link">
+                  <a href="upload.php" class="nav-link">
             <div class="nav-box">
                 <span>Create Outfit</span>
             </div></a>
-                  <a href="profile.html" class="nav-link">
-            <div class="nav-box">
-                <span>Your Profile</span>
-            </div></a>
-        
         <div class="bottom-link">  
-          <a href="about.html">About Us</a>
-          <a href="tos.html">Terms of Service</a>
-          
-          <div class ="center">
-             <p>Copyright PROJECT STYL</p>
-          </div>
-        </div>        
+        <a href="about.html">About Us</a>
+        <a href="tos.html">Terms of Service</a>
+        </div>
       </div>
     </div>
 <!-------------->
