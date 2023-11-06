@@ -9,7 +9,6 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <title>Project STYL</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/86af3d0397.js" crossorigin="anonymous"></script> <!-- fontawesome -->
   </head>
   
