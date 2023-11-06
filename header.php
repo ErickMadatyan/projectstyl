@@ -56,7 +56,7 @@
             </div></a>
         <div class="bottom-link">  
         <a href="about.html">About Us</a>
-        <a href="tos.html">Terms of Service</a>
+        <a href="tos.php">Terms of Service</a>
         </div>
       </div>
     </div>
