@@ -1,0 +1,380 @@
+/* Colors https://colorhunt.co/palette/000000ffffff92f1ffeeeeee#justCreated
+#000000 - black - rgb(0, 0, 0)
+#FFFFFF - white - rgb(255, 255, 255)
+#92F1FF - sky blue - rgb(146, 241, 255)
+#EEEEEE - lighter gray - rgb(238, 238, 238)
+#cccccc - light gray - rgb(204, 204, 204)
+#4182D8 - dark blue - rgb(65, 130, 216)
+*/
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+button {
+  margin: 20px;
+}
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+/* Basic stylings */
+body {
+  font-family: HK Grotesk, sans-serif;
+  background-color: #EEEEEE;
+}
+h1 {
+  font-family: HK Grotesk, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+h2 {
+  font-family: HK Grotesk, sans-serif;
+}
+h3 {
+  font-family: HK Grotesk, sans-serif;
+}
+h4 {
+  font-family: HK Grotesk, sans-serif;
+}
+p {
+  font-family: HK Grotesk, sans-serif;
+}
+a {
+  font-family: HK Grotesk, sans-serif;
+}
+footer{
+  position: fixed;
+  display: center;
+  width: 100%;
+  height: 65px;
+  bottom: 0;
+  margin-right: 100px;
+  left: 100px;
+  align-items: center;
+  border: 1px solid gray;
+	text-align: center;
+  padding: 0px;
+  background-color:#92F1FF;
+  color: black;
+}
+.footer h4 {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  }
+.contact-info a{
+  padding: 2px;
+  bottom: 0;
+  display: inline-block;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Style for the close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Style for the login form */
+.login-content h2 {
+  text-align: center;
+}
+.login-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*--------------- Content Wrappers ---------------*/
+.content-wrap {
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+  padding-left: 200px;
+  overflow: hidden;
+}
+.content-wrap2 {
+  margin-left: 450px;
+  display: /*flex*/ inline-block; /*new*/
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensures vertical centering across the entire viewport height */ 
+  text-align: left; /*new*/
+  max-width:800px; /*new*/
+  margin-bottom:100px; /*new*/
+}
+.column-left {
+  float: left;
+  width: 70%;
+}
+/*new*/
+/*.content-center {
+  text-align: center;
+  margin: 0px;
+  padding: 20px;
+}
+*/
+/*------------- Navigation Bars ----------------*/
+/* Style for the top navigation bar */
+.topnav {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #6b9ee1, #4182D8);
+  color: #ffffff;
+  overflow: hidden;
+  z-index: 2; /* Ensure it's on top of other content */
+}
+.left {
+  flex: 1; /* Takes up available space on the left */
+}
+.left img {
+  border-right: solid;
+  border-color: pink;
+  display: block;
+  transition: background-color 0.3s;
+}
+.left img:hover {
+  filter: hue-rotate(90deg);
+  transition: 0.3s;
+}
+.center {
+  flex: 2; /* Takes up more space in the center */
+  text-align: center; /* Center-align the search bar */
+}
+.center input {
+  width: 100%; /* Expand the input to fill its container */
+  padding: 5px;
+}
+.right {
+  flex: 1; /* Takes up available space on the right */
+  text-align: right; /* Right-align the login button */
+  padding: 10px;
+}
+/* Style for the login button */
+.right a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px; /* Add 10px of space between items */
+}
+.right a:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+/* Side Navigation Bar */
+.sidenav {
+  position: fixed;
+  top: 1;
+  padding-top: 12px;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  border-right: solid;
+  border-color: pink;
+  z-index: 1;
+}
+.sidenav a {
+  padding: 10px;
+  background-color: #92F1FF;
+  border: solid;
+  border-color: #4182D8;
+}
+.sidenav a:hover {
+  text-decoration: underline;
+  color: blue;
+  filter: hue-rotate(90deg);
+  transition: 0.3s;
+}
+.nav-link {
+  text-decoration: none;
+  display: block; /* Makes the entire link block-level */
+  padding: 10px; /* Add padding for the clickable area */
+}
+.nav-box {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-box span {
+  margin: 0;
+  padding: 0;
+}
+/* Style for the content area */
+.sidenavcontent {
+  margin-left: 250px; /* Width of the side navigation bar */
+  padding: 40px;
+}
+/* Style for the bottom link */
+.bottom-link {
+  position: fixed;
+  bottom: 0;
+  left: 7px;
+  font-size: 12px;
+  display: inline-block; /* Display the links next to each other */  
+}
+.bottom-link a {
+  margin: 0px;
+  text-decoration: none;
+  border: 0px solid #000000;
+}
+
+/*------------ Styles for Create Outfit page ----------*/
+.custom-button {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  width: 200px;
+  margin: 0 auto;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #2980b9;
+  border-radius: 10px;
+}
+.custom-button:hover {
+  background-color: #2980b9;
+}
+.custom-button input[type="file"] {
+  display: none;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.image-container { 
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 600px; /* Adjust the width to your preference */
+  height: 600px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 2px solid #cccccc;
+  margin-left: 0px; /* Shift it 100 pixels to the right */
+  float: left; /* Added float property */
+}
+.sidebar {
+  width: 200px;
+  height: 700px;
+  background-color: #f0f0f0;
+  float: right; /* Changed float property to right */
+  padding: 10px;
+}
+.tag {
+  position: absolute;
+  background-color: white;
+  color: #000000;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  font-size: 14px;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tag .tag-text {
+  flex-grow: 1;
+  min-width: 50px;
+}
+.tag .tag-text[contenteditable="true"] {
+  background: transparent;
+  border: none;
+  color: #000000;
+}
+.sidebar-item {
+  margin-bottom: 10px;
+}
+.add-item-button {
+  display: block;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.upload-button {
+  display: block;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+/* SIGN UP FORM */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 300px;
+}
+.signup-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.signup-form form {
+  width: 100%;
+}
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.signup-form button[type="submit"] {
+  background-color: #0074e4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.signup-form button[type="submit"]:hover {
+  background-color: #0057b3;
+
