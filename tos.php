@@ -1,4 +1,4 @@
-Terms of service page<?php
+<?php
   include 'header.php';
 ?>
 <!------------ CONTENT ------------->  
