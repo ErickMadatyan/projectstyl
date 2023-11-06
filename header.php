@@ -9,7 +9,7 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <title>Project STYL</title>
     <link rel="stylesheet" href="style.css" />
-    
+    <script src="script.js"></script>
   </head>
   
 <!------------ Top Navigation ------------->   
