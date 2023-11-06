@@ -8,7 +8,6 @@
 
     </div>  
   </div>  
-    <footer class="footer">
-    </footer>
-  </body>
-</html>
+<?php
+  include 'footer.php';
+?>
