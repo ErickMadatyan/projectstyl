@@ -54,14 +54,6 @@
             <div class="nav-box">
                 <span>Create Outfit</span>
             </div></a>
-                  <a href="profile.php" class="nav-link">
-            <div class="nav-box">
-                <span>Your Profile</span>
-            </div></a>
-                  <a href="settings.php" class="nav-link">
-            <div class="nav-box">
-                <span>Settings</span>
-            </div></a>
         <div class="bottom-link">  
         <a href="about.html">About Us</a>
         <a href="tos.html">Terms of Service</a>
