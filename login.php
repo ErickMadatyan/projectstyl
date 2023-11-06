@@ -27,7 +27,6 @@
 
 
 
-    <footer class="footer">
-    </footer>
-  <script src="script.js"></script>
-</html>
+<?php
+  include 'footer.php';
+?>
