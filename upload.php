@@ -11,20 +11,30 @@
   </head>
   
 <!------------ Top Navigation ------------->   
-<header>
+  <header>
   <div class="topnav">
     <div class="left">
       <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
     </div>
     <div class="center">
-          <h1>
-        Outfit Creator
-      </h1>
-          </div>
-                <div class="right">
-        <a href="#" id="loginButton"></a>
+      <input type="text" id="searchInput" placeholder="Search...">
+          
+    </div>
+    <div>     
+      <button id="searchButton">Search</button>     
+    </div>
+      <div class="right">
+        <?php
+          if(isset($_SESSION["useruid"])) {
+            echo '<a href="profile.php" id="loginButton">Profile Page</a>';
+            echo '<a href="logout.inc.php" id="loginButton">Log Out</a>';
+          }
+          else {
+            echo '<a href="signup.php" id="loginButton">Sign Up</a>';
+            echo '<a href="login.php" id="loginButton">Login</a>';
+          }
+        ?>
       </div>
-
   </div>
 
 <!------------ Side Navigation -------------> 
