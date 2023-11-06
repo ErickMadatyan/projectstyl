@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
     <footer class="footer">    
       <div>
         <h4>Questions? Email us!</h4>
