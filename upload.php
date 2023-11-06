@@ -26,7 +26,40 @@
       </div>
 
   </div>
-<style>
+
+<!------------ Side Navigation -------------> 
+    <div class="sidenavcontent">
+      <div class="sidenav">
+          <a href="index.html" class="nav-link">
+            <div class="nav-box">
+                <span>Home</span>
+            </div></a>
+          <a href="explore.html" class="nav-link">
+            <div class="nav-box">
+                <span>Explore</span>
+            </div></a>
+                  <a href="upload.html" class="nav-link">
+            <div class="nav-box">
+                <span>Create Outfit</span>
+            </div></a>
+                  <a href="profile.html" class="nav-link">
+            <div class="nav-box">
+                <span>Your Profile</span>
+            </div></a>
+        
+        <div class="bottom-link">  
+          <a href="about.html">About Us</a>
+          <a href="tos.html">Terms of Service</a>
+          
+          <div class ="center">
+             <p>Copyright PROJECT STYL</p>
+          </div>
+        </div>        
+      </div>
+    </div>
+<!-------------->
+
+  <style>
  .custom-button {
   display: block;
   text-align: center;
@@ -136,37 +169,7 @@
   margin-top: 20px;
 }   
   </style>
-<!------------ Side Navigation -------------> 
-    <div class="sidenavcontent">
-      <div class="sidenav">
-          <a href="index.html" class="nav-link">
-            <div class="nav-box">
-                <span>Home</span>
-            </div></a>
-          <a href="explore.html" class="nav-link">
-            <div class="nav-box">
-                <span>Explore</span>
-            </div></a>
-                  <a href="upload.html" class="nav-link">
-            <div class="nav-box">
-                <span>Create Outfit</span>
-            </div></a>
-                  <a href="profile.html" class="nav-link">
-            <div class="nav-box">
-                <span>Your Profile</span>
-            </div></a>
-        
-        <div class="bottom-link">  
-          <a href="about.html">About Us</a>
-          <a href="tos.html">Terms of Service</a>
-          
-          <div class ="center">
-             <p>Copyright PROJECT STYL</p>
-          </div>
-        </div>        
-      </div>
-    </div>
-     
+  
   </header>
 <!------------ CONTENT ------------->  
 
