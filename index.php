@@ -34,8 +34,7 @@
   </div>
 
 
-    <footer class="footer">
-    </footer>
-  </body>
-  <script src="script.js"></script>
+<?php
+  include 'footer.php';
+?>
 </html>
