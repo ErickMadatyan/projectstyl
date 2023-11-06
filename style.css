@@ -182,6 +182,7 @@ footer{
   text-decoration: underline;
 }
 /* Side Navigation Bar */
+
 .sidenav {
   position: fixed;
   top: 1;
@@ -195,38 +196,45 @@ footer{
   border-color: pink;
   z-index: 1;
 }
+
 .sidenav a {
   padding: 10px;
   background-color: #92F1FF;
   border: solid;
   border-color: #4182D8;
 }
+
 .sidenav a:hover {
   text-decoration: underline;
   color: blue;
   filter: hue-rotate(90deg);
   transition: 0.3s;
 }
+
 .nav-link {
   text-decoration: none;
   display: block; /* Makes the entire link block-level */
   padding: 10px; /* Add padding for the clickable area */
 }
+
 .nav-box {
   padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .nav-box span {
   margin: 0;
   padding: 0;
 }
+
 /* Style for the content area */
 .sidenavcontent {
   margin-left: 250px; /* Width of the side navigation bar */
   padding: 40px;
 }
+
 /* Style for the bottom link */
 .bottom-link {
   position: fixed;
@@ -234,6 +242,12 @@ footer{
   left: 7px;
   font-size: 12px;
   display: inline-block; /* Display the links next to each other */  
+}
+
+.bottom-link a {
+  margin: 0px;
+  text-decoration: none;
+  border: 0px solid #000000;
 }
 .bottom-link a {
   margin: 0px;
