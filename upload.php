@@ -7,7 +7,7 @@
     <title>Outfit Creator</title>
     <link rel="stylesheet" href="style.css" />
    <script src="https://kit.fontawesome.com/86af3d0397.js" crossorigin="anonymous"></script> <!-- fontawesome -->
-
+    <script src="script.js"></script>
   </head>
   
 <!------------ Top Navigation ------------->   
@@ -207,5 +207,4 @@
     </footer>
 </body>
 
-       <script src="script.js"></script>
 </html>
