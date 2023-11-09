@@ -110,6 +110,7 @@ footer{
 }
 .content-wrap2 {
   margin-left: 450px;
+  width: 70%;
   display: /*flex*/ inline-block; /*new*/
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -117,6 +118,8 @@ footer{
   text-align: left; /*new*/
   max-width:800px; /*new*/
   margin-bottom:100px; /*new*/
+  background-color: purple;
+  padding: 10px;
 }
 .column-left {
   float: left;
@@ -129,7 +132,13 @@ footer{
   padding: 20px;
 }
 */
+
+
+
+
+
 /*------------- Navigation Bars ----------------*/
+
 /* Style for the top navigation bar */
 .topnav {
   position: fixed;
@@ -181,6 +190,12 @@ footer{
   color: #ff5722;
   text-decoration: underline;
 }
+
+
+
+
+
+
 /* Side Navigation Bar */
 
 .sidenav {
@@ -229,11 +244,15 @@ footer{
   padding: 0;
 }
 
-/* Style for the content area */
 .sidenavcontent {
   margin-left: 250px; /* Width of the side navigation bar */
   padding: 40px;
 }
+
+
+
+
+
 
 /* Style for the bottom link */
 .bottom-link {
@@ -254,6 +273,11 @@ footer{
   text-decoration: none;
   border: 0px solid #000000;
 }
+
+
+
+
+
 
 /*------------ Styles for Create Outfit page ----------*/
 .custom-button {
@@ -354,6 +378,11 @@ footer{
 }
 
 
+
+
+
+
+
 /* SIGN UP FORM */
 .signup-form {
   display: flex;
@@ -376,7 +405,7 @@ footer{
   padding: 10px;
   margin: 5px 0;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
 }
 .signup-form button[type="submit"] {
@@ -391,4 +420,4 @@ footer{
 }
 .signup-form button[type="submit"]:hover {
   background-color: #0057b3;
-
+}
