@@ -172,7 +172,7 @@ footer{
   transition: 0.3s;
 }
 .center {
-  flex: 2; /* Takes up more space in the center */
+  flex: 1; /* Takes up more space in the center */
   text-align: center; /* Center-align the search bar */
 }
 .center input {
@@ -183,12 +183,15 @@ footer{
   flex: 1; /* Takes up available space on the right */
   text-align: right; /* Right-align the login button */
   padding: 10px;
+
 }
+
+
 /* Style for the login button */
 .right a {
   color: #ffffff;
   text-decoration: none;
-  margin-right: 20px; /* Add 10px of space between items */
+  margin-right: 10px; /* Add 10px of space between items */
 }
 .right a:hover {
   color: #ff5722;
