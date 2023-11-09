@@ -4,7 +4,7 @@
 
 <!------------ CONTENT ------------->
 <div class="content-wrap2">
-    <div class="content-center">
+    <div>
        <h1>About Us</h1>
 
         <h2>Our Mission</h2>

@@ -109,17 +109,21 @@ footer{
   overflow: hidden;
 }
 .content-wrap2 {
-  margin-left: 450px;
-  width: 70%;
+  margin-left: 250px;
+  width: 80%;
   display: /*flex*/ inline-block; /*new*/
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   min-height: 100vh; /* Ensures vertical centering across the entire viewport height */ 
-  text-align: left; /*new*/
-  max-width:800px; /*new*/
+  text-align: left; /*new*/ 
   margin-bottom:100px; /*new*/
-  background-color: purple;
-  padding: 10px;
+  background-color: beige;
+  padding: 20px;
+}
+
+.content-wrap2 h1 {
+  text-align: center;
+  border-bottom: 1px solid;
 }
 .column-left {
   float: left;
