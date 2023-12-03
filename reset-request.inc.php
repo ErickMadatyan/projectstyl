@@ -58,7 +58,7 @@ if(isset($_POST["reset-request-submit"])) {
 
     //Recipients
     $mail->setFrom('no-reply@projectstyl.com', 'Mailer');
-    $mail->addAddress('madatyanerick@gmail.com');     //Add a recipient
+    $mail->addAddress($userEmail);     //Add a recipient
 
 
 
