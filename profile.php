@@ -5,7 +5,7 @@
   <body>  
   <div class="content-wrap">
     <div class="column-left">
-
+hello
     </div>  
   </div>  
 <?php
