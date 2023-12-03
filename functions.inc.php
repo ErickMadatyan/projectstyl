@@ -101,14 +101,19 @@ function loginUser($conn, $username, $pwd) {
     $pwdHashed = $uidExists["usersPwd"];
     $checkPwd = password_verify($pwd, $pwdHashed);
 
-    if($checkPwd === false) {
+    if ($checkPwd === false) {
         header("location: login.php?error=wronglogin");
         exit();
-    }
-    else if($checkPwd === true) {
+    } else if ($checkPwd === true) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
+
+        // Update last login timestamp
+        $userId = $_SESSION["userid"];
+        $sql = "UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE usersId = $userId";
+        mysqli_query($conn, $sql);
+
         header("location: profile.php");
         exit();
     }
