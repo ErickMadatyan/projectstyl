@@ -17,21 +17,26 @@ include 'header.php';
     </form>
     <?php
     if (isset($_GET["error"])) {
+        $errorMessage = "";
+
         if ($_GET["error"] == "emptyinput") {
-            echo "<p> Fill in all fields! </p>";
+            $errorMessage = "Fill in all fields!";
         } else if ($_GET["error"] == "invaliduid") {
-            echo "<p> Choose a proper username! </p>";
+            $errorMessage = "Choose a proper username!";
         } else if ($_GET["error"] == "invalidemail") {
-            echo "<p> Choose a proper email! </p>";
+            $errorMessage = "Choose a proper email!";
         } else if ($_GET["error"] == "passwordsdontmatch") {
-            echo "<p> Passwords don't match! </p>";
+            $errorMessage = "Passwords don't match!";
         } else if ($_GET["error"] == "stmtfailed") {
-            echo "<p> Something went wrong, please try again! </p>";
+            $errorMessage = "Something went wrong, please try again!";
         } else if ($_GET["error"] == "usernametaken") {
-            echo "<p> Username already taken! </p>";
+            $errorMessage = "Username already taken!";
         } else if ($_GET["error"] == "recaptchafailed") {
-            echo "<p> reCAPTCHA verification failed! Please try again. </p>";
+            $errorMessage = "reCAPTCHA verification failed! Please try again.";
         }
+
+        echo '<p style="color: red;">' . $errorMessage . '</p>';
+    }
     }
     ?>
     <?php
