@@ -6,7 +6,7 @@
   <div class="content-wrap">
     <div class="column-left">
 <?php
-require_once('PHPMailer/PHPMailerAutoload.php');
+require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer();
 $mail->isSMTP();
