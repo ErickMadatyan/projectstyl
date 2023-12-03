@@ -20,13 +20,13 @@
       <div class="sidebar" id="sidebar">
         <h3>Sidebar</h3>
         <div id="sidebar-items">
-          <!-- Items and links will be dynamically added here -->
+          
         </div>
         <button class="add-item-button" id="addItemButton">Add Item</button>
         <button class="upload-button" id="uploadButton">Upload Data</button>
       </div>
     </div>
-
+</body>
 
 <?php
   include 'footer.php';
