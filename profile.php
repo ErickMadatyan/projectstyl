@@ -9,7 +9,7 @@
     </div>  
   </div>  
     <?php
-require 'PHPMailer/PHPMailerAutoload.php';
+require_once ('PHPMailer/PHPMailerAutoload.php');
 
 $mail = new PHPMailer();
 $mail->isSMTP();
