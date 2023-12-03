@@ -5,7 +5,10 @@
   <body>  
   <div class="content-wrap">
     <div class="column-left">
-<?php
+
+    </div>  
+  </div>  
+    <?php
 require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer();
@@ -23,8 +26,6 @@ $mail->Body = 'A test Email!';
 $mail->AddAddress('madatyanerick@gmail.com');
 $mail->Send();
 ?>
-    </div>  
-  </div>  
 <?php
   include 'footer.php';
 ?>
