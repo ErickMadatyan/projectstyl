@@ -109,9 +109,9 @@ function loginUser($conn, $username, $pwd) {
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
 
-        // Update last login timestamp
+        // Update last login timestamp and increment login count
         $userId = $_SESSION["userid"];
-        $sql = "UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE usersId = $userId";
+        $sql = "UPDATE users SET last_login = CURRENT_TIMESTAMP, login_count = login_count + 1 WHERE usersId = $userId";
         mysqli_query($conn, $sql);
 
         header("location: profile.php");
