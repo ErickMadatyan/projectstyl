@@ -37,16 +37,38 @@ if(isset($_POST["reset-request-submit"])) {
   mysqli_stmt_close($stmt);
   mysqli_close($conn);
 
-  $to = $userEmail;
-  $subject = 'Reset your password for Project Styl';
-  $message = '<p>There was a request to change your password! If you did not make this request then please ignore this email. Otherwise, please click this link to change your password:</br>';
-  $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-  $headers = "From: ProjectStyl <project.styl.inc@gmail.com>\r\n";
-  $headers .= "Reply-To: project.styl.inc@gmail.com\r\n";
-  $headers .= "Content-type: text/html\r\n";
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 
-  mail($to, $subject, $message, $headers);
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'project.styl.inc@gmail.com';                     //SMTP username
+    $mail->Password   = 'fwttnopuzhamhtry';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('no-reply@projectstyl.com', 'Mailer');
+    $mail->addAddress($userEmail);     //Add a recipient
+
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Reset Request For Project Styl';
+    $mail->Body    = 'There was a reuqest to change your password! If you did not make this request then please ignore this email. Otherwise, please click this link to change your password:</br> <a href="' . $url . '">' . $url . '</a></p>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
 
   header("Location: reset-password.php?reset=success");
   
