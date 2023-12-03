@@ -1,5 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 if(isset($_POST["reset-request-submit"])) {
 
   $selector = bin2hex(random_bytes(8));
@@ -37,13 +43,7 @@ if(isset($_POST["reset-request-submit"])) {
   mysqli_stmt_close($stmt);
   mysqli_close($conn);
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMailer.php';
-require './PHPMailer/src/SMTP.php';
 
 //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
