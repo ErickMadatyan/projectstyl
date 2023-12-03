@@ -5,7 +5,6 @@
   <body>  
   <div class="content-wrap">
     <div class="column-left">
-      //last login
 <section class="profile-info">
     <h2>Welcome to Your Profile</h2>
 
@@ -34,7 +33,7 @@
     ?>
 
 </section>
-      //end of last login
+
     </div>  
   </div>  
 
