@@ -15,17 +15,19 @@
         $userId = $_SESSION['userid'];
 
         // Fetch the last login timestamp from the database
-        $sql = "SELECT last_login FROM users WHERE usersId = $userId";
-        $result = mysqli_query($conn, $sql);
+$sql = "SELECT last_login, login_count FROM users WHERE usersId = $userId";
+$result = mysqli_query($conn, $sql);
 
-        if ($result) {
-            $row = mysqli_fetch_assoc($result);
-            $lastLogin = $row['last_login'];
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $lastLogin = $row['last_login'];
+    $loginCount = $row['login_count'];
 
-            echo "<p>Last Login: $lastLogin</p>";
-        } else {
-            echo "<p>Error fetching last login information.</p>";
-        }
+    echo "<p>Last Login: $lastLogin</p>";
+    echo "<p>Login Count: $loginCount</p>";
+} else {
+    echo "<p>Error fetching login information: " . mysqli_error($conn) . "</p>";
+}
     } else {
         // Redirect the user to the login page if not logged in
         header("Location: login.php");
