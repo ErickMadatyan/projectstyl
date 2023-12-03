@@ -37,7 +37,7 @@ include 'header.php';
 
         echo '<p style="color: red;">' . $errorMessage . '</p>';
     }
-    }
+    
     ?>
     <?php
     if (isset($_GET["newpwd"])) {
