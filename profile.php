@@ -1,5 +1,6 @@
 <?php
   include 'header.php';
+  require_once 'dbh.inc.php';
 ?>
 <!------------ CONTENT ------------->
   <body>  
