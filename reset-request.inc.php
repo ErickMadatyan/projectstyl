@@ -46,7 +46,7 @@ require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
 
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
@@ -58,7 +58,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('no-reply@projectstyl.com', 'Mailer');
-    $mail->addAddress($userEmail);     //Add a recipient
+    $mail->addAddress('madatyanerick@gmail.com');     //Add a recipient
 
 
 
