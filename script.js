@@ -1,104 +1,154 @@
 // Script for upload.html stuff
-   const imageUpload = document.querySelector("#image_upload");
-    const buttonLabel = document.querySelector("label[for='image_upload']");
-    const imageContainer = document.querySelector("#imageContainer");
-    const sidebarItems = document.getElementById("sidebar-items");
-    const addItemButton = document.getElementById("addItemButton");
-    const uploadButton = document.getElementById("uploadButton");
-    let itemCount = 1;
-    
-        function removeItem(removeButton) {
-      const item = removeButton.parentElement;
-      const itemName = item.querySelector('input[type="text"]').value;
-      removeFloatingDescription(itemName);
-      sidebarItems.removeChild(item);
-    }
+const imageUpload = document.querySelector("#image_upload");
+const buttonLabel = document.querySelector("label[for='image_upload']");
+const imageContainer = document.querySelector("#imageContainer");
+const sidebarItems = document.getElementById("sidebar-items");
+const addItemButton = document.getElementById("addItemButton");
+const uploadButton = document.getElementById("uploadButton");
+let itemCount = 1;
 
-    // Function to remove the floating description
-    function removeFloatingDescription(itemName) {
-      const floatingDescriptions = document.querySelectorAll('.tag');
-      for (const tag of floatingDescriptions) {
-        const tagText = tag.querySelector('.tag-text').textContent;
-        if (tagText === itemName) {
-          tag.parentElement.removeChild(tag);
-        }
-      }
-    }
+imageUpload.addEventListener("change", function () {
+  const selectedFile = this.files[0];
+  if (selectedFile) {
+    const url = URL.createObjectURL(selectedFile);
+    imageContainer.style.backgroundImage = `url(${url})`;
+  }
+});
 
-
-        addItemButton.addEventListener("click", function (e) {
-      const newItemDiv = document.createElement("div");
-      newItemDiv.className = "sidebar-item";
-      newItemDiv.innerHTML = `
-        <input type="text" placeholder="Item ${itemCount}">
-        <input type="text" placeholder="Link ${itemCount}">
+addItemButton.addEventListener("click", function (e) {
+    // Create a new dropdown select element
+    const clothingDropdown = document.createElement("select");
+    clothingDropdown.innerHTML = `
+        <option value="" disabled selected>Select Item</option>
+        <option value="Hat">Hat</option>
+        <option value="Shirt">Shirt</option>
+        <option value="Sweater">Sweater</option>
+        <option value="Jacket">Jacket</option>
+        <option value="Pants">Pants</option>
+        <option value="Shorts">Shorts</option>
+        <option value="Gloves">Gloves</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Socks">Socks</option>
+        <option value="Accessory">Accessory</option>
+    `;
+  
+    // Create a new item div
+    const newItemDiv = document.createElement("div");
+    newItemDiv.className = "sidebar-item";
+    newItemDiv.innerHTML = `
+        ${clothingDropdown.outerHTML}
+        <input type="text" class="description-input" placeholder="Link ${itemCount}">
         <button class="remove-item-button" onclick="removeItem(this)">X</button>
-      `;
-      sidebarItems.appendChild(newItemDiv);
-      itemCount++;
+    `;
+    sidebarItems.appendChild(newItemDiv);
+    itemCount++;
+  
+    // Associate the selected item with the newItemDiv
+    newItemDiv.addEventListener("change", function () {
+        newItemDiv.selectedItem = newItemDiv.querySelector("select").value;
+        updateFloatingTag(newItemDiv);
+    });
+  
+  
+    // Event listener for updating the floating tag with the selected item from the dropdown
+    clothingDropdown.addEventListener("change", function () {
+        const selectedClothing = clothingDropdown.value;
+        // Associate the selected item with the corresponding newItemDiv
+        newItemDiv.selectedItem = selectedClothing;
+        updateFloatingTag(newItemDiv);
+    });
+  
+
+
+
+
+    // Create a new floating description tag
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.style.left = `${imageContainer.clientWidth / 2}px`; // Adjust as needed
+    tag.style.top = `${imageContainer.clientHeight / 2}px`; // Adjust as needed
+
+    tag.innerHTML = `
+        <span>Item:</span>
+        <span class="tag-text"></span>
+    `;
+    imageContainer.appendChild(tag);
+
+    // Attach the tag to the newItemDiv for reference
+    newItemDiv.tag = tag;
+
+    // Add event listeners for dragging the tag
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    tag.addEventListener("mousedown", function (e) {
+        isDragging = true;
+        offsetX = e.clientX - tag.getBoundingClientRect().left;
+        offsetY = e.clientY - tag.getBoundingClientRect().top;
     });
 
-    imageUpload.addEventListener("change", function () {
-      const selectedFile = this.files[0];
-      if (selectedFile) {
-        const url = URL.createObjectURL(selectedFile);
-        imageContainer.style.backgroundImage = `url(${url})`;
-      }
+    document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+            const imageRect = imageContainer.getBoundingClientRect();
+            let left = e.clientX - imageRect.left - offsetX;
+            let top = e.clientY - imageRect.top - offsetY;
+
+            // Ensure the tag stays within the image container
+            left = Math.min(imageRect.width - tag.offsetWidth, Math.max(0, left));
+            top = Math.min(imageRect.height - tag.offsetHeight, Math.max(0, top));
+
+            tag.style.left = left + "px";
+            tag.style.top = top + "px";
+        }
     });
 
-    addItemButton.addEventListener("click", function (e) {
-      const itemName = e.target.parentElement.querySelector('input[type="text"]').value;
-      const tag = document.createElement("div");
-      tag.className = "tag";
-      tag.style.left = `${e.clientX - imageContainer.getBoundingClientRect().left}px`;
-      tag.style.top = `${e.clientY - imageContainer.getBoundingClientRect().top}px`;
-
-      tag.innerHTML = `
-        <span>Description:</span>
-        <span class="tag-text" contenteditable="true">${itemName}</span>
-      `;
-      imageContainer.appendChild(tag);
-
-            let isDragging = false;
-            let offsetX, offsetY;
-
-            tag.addEventListener("mousedown", function(e) {
-                isDragging = true;
-                offsetX = e.clientX - tag.getBoundingClientRect().left;
-                offsetY = e.clientY - tag.getBoundingClientRect().top;
-            });
-
-            document.addEventListener("mousemove", function(e) {
-                if (isDragging) {
-                    const imageRect = imageContainer.getBoundingClientRect();
-                    let left = e.clientX - imageRect.left - offsetX;
-                    let top = e.clientY - imageRect.top - offsetY;
-
-                    // Ensure the tag stays within the image container
-                    left = Math.min(imageRect.width - tag.offsetWidth, Math.max(0, left));
-                    top = Math.min(imageRect.height - tag.offsetHeight, Math.max(0, top));
-
-                    tag.style.left = left + "px";
-                    tag.style.top = top + "px";
-                }
-            });
-
-            document.addEventListener("mouseup", function() {
-                isDragging = false;
-            });
-        
+    document.addEventListener("mouseup", function () {
+        isDragging = false;
     });
+})
 
-    function removeTag(deleteButton) {
-        const tag = deleteButton.parentElement;
+  // Function to update the floating tag based on the selected item in the newItemDiv
+function updateFloatingTag(itemDiv) {
+    const tag = itemDiv.tag;
+    if (tag) {
+        const selectedItem = itemDiv.selectedItem;
+        tag.querySelector('.tag-text').textContent = selectedItem;
+    }
+}
+
+// Modified removeItem function to remove both sidebar item and its associated floating tag
+function removeItem(removeButton) {
+    const item = removeButton.parentElement;
+    const tag = item.tag;
+
+    // Remove the corresponding floating tag
+    if (tag) {
         tag.parentElement.removeChild(tag);
     }
 
-    uploadButton.addEventListener("click", function() {
-        // Handle data upload here
-        // You can access the item names, links, and other information from the sidebar
-    });
+    // Remove the sidebar item
+    sidebarItems.removeChild(item);
+}
+
+
+function removeFloatingDescription(itemName) {
+    const floatingDescriptions = document.querySelectorAll('.tag');
+    for (const tag of floatingDescriptions) {
+        const tagText = tag.querySelector('.tag-text').textContent;
+        if (tagText === itemName) {
+            tag.parentElement.removeChild(tag);
+        }
+    }
+}
+
+
+uploadButton.addEventListener("click", function () {
+    // Handle data upload here
+    // You can access the item names, links, and other information from the sidebar
+});
+
 // End of script for upload.html stuff
+
 
 
 
@@ -173,3 +223,4 @@ searchButton.addEventListener('click', function() {
     // Example: window.location.href = '/search-results?query=' + query;
     console.log('Performing search for query: ' + query);
 });
+
