@@ -41,6 +41,13 @@
     }
   }
 ?>
+    <?php
+    if (isset($_GET["newpwd"])) {
+      if ($_GET["newpwd"] == "passwordupdated") {
+        echo '<p> Your Password has been reset!</p>';
+      }
+    }
+      ?>
     <a href="reset-password.php">Forgot Your Password?</a>
 </section>
 
