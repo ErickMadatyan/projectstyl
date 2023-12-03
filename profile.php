@@ -26,12 +26,6 @@ $mail->Body = 'A test Email!';
 $mail->AddAddress('madatyanerick@gmail.com');
 $mail->Send();
 
-if(!$mail->send()){
-echo "Mailer Error: " . $mail->ErrorInfo;
-}else{
-echo "Message sent!";
-}
-
 ?>
 <?php
   include 'footer.php';
