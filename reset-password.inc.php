@@ -42,7 +42,7 @@ if(isset($_POST["reset-password-submit"])) {
       } else if($tokenCheck === true) {
         $tokenEmail = $row['pwdResetEmail'];
 
-        $sql = "SELECT * FROM users WHERE emailUsers=?;";
+        $sql = "SELECT * FROM users WHERE usersEmail=?;";
         $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)) {
       echo "There was an error!";
