@@ -55,33 +55,32 @@
     var password = document.getElementById("password").value;
     var strengthIndicator = document.getElementById("password-strength");
 
-    // Reset strength indicator
+    // Reset strength indicator and color
     strengthIndicator.innerHTML = "";
+    strengthIndicator.style.color = "";
 
     // Minimum length requirement
     if (password.length < 8) {
-      strengthIndicator.innerHTML = "Minimum length: 8 characters";
+      strengthIndicator.innerHTML = "Weak";
+      strengthIndicator.style.color = "red";
       return;
     }
 
-    // Check for uppercase letters
-    if (/[A-Z]/.test(password)) {
-      strengthIndicator.innerHTML += "Uppercase letter ";
-    }
+    // Check for uppercase letters, lowercase letters, and numbers
+    var hasUppercase = /[A-Z]/.test(password);
+    var hasLowercase = /[a-z]/.test(password);
+    var hasNumber = /\d/.test(password);
 
-    // Check for lowercase letters
-    if (/[a-z]/.test(password)) {
-      strengthIndicator.innerHTML += "Lowercase letter ";
-    }
-
-    // Check for at least one number
-    if (/\d/.test(password)) {
-      strengthIndicator.innerHTML += "Number ";
-    }
-
-    // Check for special characters
-    if (/[^A-Za-z0-9]/.test(password)) {
-      strengthIndicator.innerHTML += "Special character ";
+    // Determine strength level
+    if (hasUppercase && hasLowercase && hasNumber) {
+      strengthIndicator.innerHTML = "Strong";
+      strengthIndicator.style.color = "green";
+    } else if (hasUppercase || hasLowercase || hasNumber) {
+      strengthIndicator.innerHTML = "Medium";
+      strengthIndicator.style.color = "orange";
+    } else {
+      strengthIndicator.innerHTML = "Weak";
+      strengthIndicator.style.color = "red";
     }
   }
 </script>
@@ -91,7 +90,6 @@
     display: block;
     margin-top: 5px;
     font-size: 14px;
-    color: #888;
   }
 </style>
 
