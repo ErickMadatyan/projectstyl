@@ -12,6 +12,14 @@
     <button type="submit" name="reset-request-submit">Submit Password Reset</button>
   </form>
 
+  <?php 
+    if (isset($_GET["reset"])) {
+      if ($_GET["reset"] == "success") {
+        echo '<p class="signupsuccess">Check Your E-mail!</p>';
+      }
+    }
+  ?>
+      
 </section>
 
 
