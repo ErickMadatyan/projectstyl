@@ -11,6 +11,7 @@
     <input type="text" name="email" placeholder="Email...">
     <input type="text" name="uid" placeholder="Username...">
     <input type="password" name="pwd" placeholder="Password...">
+    <span id="password-strength"></span>
     <input type="password" name="pwdRepeat" placeholder="Repeat Password...">
     <button type="submit" name="submit">
       Sign Up
@@ -51,7 +52,50 @@
     <a href="reset-password.php">Forgot Your Password?</a>
 </section>
 
+<script>
+  function checkPasswordStrength() {
+    var password = document.getElementById("password").value;
+    var strengthIndicator = document.getElementById("password-strength");
 
+    // Reset strength indicator
+    strengthIndicator.innerHTML = "";
+
+    // Minimum length requirement
+    if (password.length < 8) {
+      strengthIndicator.innerHTML = "Minimum length: 8 characters";
+      return;
+    }
+
+    // Check for uppercase letters
+    if (/[A-Z]/.test(password)) {
+      strengthIndicator.innerHTML += "Uppercase letter ";
+    }
+
+    // Check for lowercase letters
+    if (/[a-z]/.test(password)) {
+      strengthIndicator.innerHTML += "Lowercase letter ";
+    }
+
+    // Check for at least one number
+    if (/\d/.test(password)) {
+      strengthIndicator.innerHTML += "Number ";
+    }
+
+    // Check for special characters
+    if (/[^A-Za-z0-9]/.test(password)) {
+      strengthIndicator.innerHTML += "Special character ";
+    }
+  }
+</script>
+
+<style>
+  #password-strength {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #888;
+  }
+</style>
 
 <?php
   include 'footer.php';
