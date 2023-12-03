@@ -55,7 +55,7 @@ if(isset($_POST["reset-password-submit"])) {
       echo "There was an error!";
       exit();
     } else {
-      $sql = "UPDATE users SET pwdUsers=? WHERE emailUsers=?";
+      $sql = "UPDATE users SET usersPwd=? WHERE usersEmail=?";
         $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)) {
       echo "There was an error!";
