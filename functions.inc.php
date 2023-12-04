@@ -79,7 +79,7 @@ function createUser($conn, $name, $email, $username, $pwd) {
     $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
     
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd, $verification_code);
+    mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $hashedPwd, $verification_code);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
