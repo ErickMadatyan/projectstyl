@@ -35,8 +35,8 @@ if (isset($_POST["submit"])) {
     $recaptchaResultData = json_decode($recaptchaResult, true);
 
     // Check if reCAPTCHA verification was successful
-//    if (!$recaptchaResultData['success']) {
-  //      header("location: signup.php?error=recaptchafailed");
+    if (!$recaptchaResultData['success']) {
+        header("location: signup.php?error=recaptchafailed");
         exit();
     }
 
