@@ -8,31 +8,31 @@ if (isset($_POST["submit"])) {
     $pwdRepeat = $_POST["pwdRepeat"];
 
     // Your reCAPTCHA secret key
-    $recaptchaSecretKey = 'YOUR_RECAPTCHA_SECRET_KEY';
-
+//    $recaptchaSecretKey = 'YOUR_RECAPTCHA_SECRET_KEY';
+//
     // Get reCAPTCHA response
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
+  //  $recaptchaResponse = $_POST['g-recaptcha-response'];
 
     // Verify reCAPTCHA
-    $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
-    $recaptchaData = [
-        'secret'   => $recaptchaSecretKey,
-        'response' => $recaptchaResponse,
-        'remoteip' => $_SERVER['REMOTE_ADDR'],
-    ];
+   // $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
+    //$recaptchaData = [
+     //   'secret'   => $recaptchaSecretKey,
+       // 'response' => $recaptchaResponse,
+     //   'remoteip' => $_SERVER['REMOTE_ADDR'],
+  //  ];
 
-    $recaptchaOptions = [
-        'http' => [
-            'method' => 'POST',
-            'content' => http_build_query($recaptchaData),
-        ],
-    ];
+   // $recaptchaOptions = [
+     //   'http' => [
+      //      'method' => 'POST',
+       //     'content' => http_build_query($recaptchaData),
+    //    ],
+   // ];
 
-    $recaptchaContext = stream_context_create($recaptchaOptions);
-    $recaptchaResult = file_get_contents($recaptchaUrl, false, $recaptchaContext);
+  //  $recaptchaContext = stream_context_create($recaptchaOptions);
+  //  $recaptchaResult = file_get_contents($recaptchaUrl, false, $recaptchaContext);
 
     // Decode the JSON response
-    $recaptchaResultData = json_decode($recaptchaResult, true);
+ //   $recaptchaResultData = json_decode($recaptchaResult, true);
 
     // Check if reCAPTCHA verification was successful
    // if (!$recaptchaResultData['success']) {
