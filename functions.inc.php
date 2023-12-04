@@ -135,6 +135,14 @@ $logMessage = "[" . date('Y-m-d H:i:s') . "] Unsuccessful login attempt for user
     }
 
     $pwdHashed = $uidExists["usersPwd"];
+    $email_verified = $uidExists["email_verified"];
+    if ($email_verified == false) {
+        $logMessage = "[" . date('Y-m-d H:i:s') . "] user not verified: $username";
+        error_log($logMessage, 3, "/var/log/myapp/login_log.txt");
+        
+        header("location: login.php?error=verifyemail");
+        exit();
+    }
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
@@ -143,6 +151,7 @@ $logMessage = "[" . date('Y-m-d H:i:s') . "] Unsuccessful login attempt for user
         
         header("location: login.php?error=wronglogin");
         exit();
+        
     } else if ($checkPwd === true) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
