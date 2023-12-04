@@ -21,6 +21,9 @@
     else if ($_GET["error"] == "wronglogin") {
       echo "<p> Incorrect Login! </p>";
     }
+    else if ($_GET["error"] == "verifyemail"){
+      echo "<p> Verify Email! </p>";
+    }
   }
 ?>
 </section>
