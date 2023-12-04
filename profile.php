@@ -28,6 +28,10 @@ if (isset($_SESSION['userid'])) {
         echo "<h2>Welcome to Your Profile, $userName!</h2>";
         echo "<p>Last Login: $lastLogin</p>";
         echo "<p>Login Count: $loginCount</p>";
+
+        // Add a link to download the confidential file
+        echo "<p><a href='company_confidential_file.txt' download>Download Company Confidential File</a></p>";
+
         echo "</section>";
     } else {
         echo "<p>Error fetching user information: " . mysqli_error($conn) . "</p>";
