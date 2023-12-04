@@ -12,7 +12,7 @@ include 'header.php';
         <input type="password" name="pwd" id="password" placeholder="Password..." oninput="checkPasswordStrength()">
         <span id="password-strength"></span>
         <input type="password" name="pwdRepeat" placeholder="Repeat Password...">
-        <div class="g-recaptcha" data-sitekey="6LeEkiQpAAAAADXkInBDRN-5HhcoGAB5Nl2Z1mkk"></div>
+      <!--  <div class="g-recaptcha" data-sitekey="6LeEkiQpAAAAADXkInBDRN-5HhcoGAB5Nl2Z1mkk"></div>  -->
         <button type="submit" name="submit">Sign Up</button>
     </form>
     <?php
