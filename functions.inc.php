@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
     $result;
     if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)) {
@@ -63,18 +70,43 @@ function uidExists($conn, $username, $email) {
 }
 
 function createUser($conn, $name, $email, $username, $pwd) {
-    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, verification_code) VALUES (?, ?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
         header("location: signup.php?error=stmtfailed");
         exit();
     }
-
+    $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
     
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd, $verification_code);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'project.styl.inc@gmail.com';                     //SMTP username
+    $mail->Password   = 'fwttnopuzhamhtry';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('no-reply@projectstyl.com', 'Mailer');
+    $mail->addAddress($email);     //Add a recipient
+
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Account Activation';
+    $mail->Body    = 'Please Activate Your Account:</br> <a href="http://projectstl.com/verify?token={$verification_code}"</a></p>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    
     header("location: signup.php?error=none");
     exit();
 }
