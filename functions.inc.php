@@ -94,6 +94,10 @@ function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username);
 
     if ($uidExists === false) {
+        
+        $logMessage = "Unsuccessful login attempt for username: $username";
+    error_log($logMessage, 3, "/var/log/myapp/login_log.txt");
+        
         header("location: login.php?error=wronglogin");
         exit();
     }
@@ -102,6 +106,9 @@ function loginUser($conn, $username, $pwd) {
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
+        $logMessage = "Unsuccessful login attempt for username: $username";
+error_log($logMessage, 3, "/var/log/myapp/login_log.txt");
+        
         header("location: login.php?error=wronglogin");
         exit();
     } else if ($checkPwd === true) {
