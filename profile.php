@@ -7,7 +7,6 @@
   <div class="content-wrap">
     <div class="column-left">
 <section class="profile-info">
-    <h2>Welcome to Your Profile</h2>
 
     <?php
 // Check if the user is logged in
