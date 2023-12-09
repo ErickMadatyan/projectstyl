@@ -23,7 +23,7 @@ if (isset($_SESSION['userid'])) {
         <input type="file" name="image_upload" id="image_upload" style="display: none;" accept="image/*">
         Select an image
     </label>
-    <input type="submit" value="Upload Image" style="display: none;">
+  <!--  <input type="submit" value="Upload Image" style="display: none;">   -->
 </form>
 
 <?php } else {
