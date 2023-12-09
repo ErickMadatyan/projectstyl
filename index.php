@@ -13,14 +13,41 @@
           }
         ?>
 
-      <h1>
-        Home page
-      </h1>
+            
+    <section class="gallery-links">
+      <div class="wrapper">
+        <h2>Gallery</h2>
 
+        <div class="gallery-container">
+          <a href="#">
+            <div> </div>
+            <h3>This is a title</h3>
+            <p>This is a paragraph</p>
+          </a>
+          <a href="#">
+            <div> </div>
+            <h3>This is a title</h3>
+            <p>This is a paragraph</p>
+          </a>
+          <a href="#">
+            <div> </div>
+            <h3>This is a title</h3>
+            <p>This is a paragraph</p>
+          </a>
+          <a href="#">
+            <div> </div>
+            <h3>This is a title</h3>
+            <p>This is a paragraph</p>
+          </a>
+          
+          
+        </div>
+
+      </div>
+    </section>
+      
     </div>  
   </div>
-
-
 <?php
   include 'footer.php';
 ?>
