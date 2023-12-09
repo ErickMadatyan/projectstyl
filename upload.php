@@ -35,7 +35,7 @@ if (isset($_SESSION['userid'])) {
 //check if user is logged in
 if (isset($_SESSION['userid'])) {
     $userId = $_SESSION['userid'];
-echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHELO " . $_SESSION["userid"];
+echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHELO " . $_SESSION["useruid"];
 ?>
     <div class="container">
       <div class="image-container" id="imageContainer"></div>
