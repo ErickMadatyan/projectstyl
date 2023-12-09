@@ -1,5 +1,6 @@
 <?php
   include 'header.php';
+require_once 'dbh.inc.php';
 ?>
 <!------------ CONTENT ------------->  
 
@@ -7,6 +8,16 @@
  <!-------- insert background -------->
 
 <body>
+
+
+<?php
+//check if user is logged in
+if (isset($_SESSION['userid'])) {
+    $userId = $_SESSION['userid'];
+?>
+
+
+
 <form action="upload.php" method="post" enctype="multipart/form-data">
     <label for="image_upload" class="custom-button">
         <input type="file" name="image_upload" id="image_upload" style="display: none;" accept="image/*">
@@ -14,6 +25,11 @@
     </label>
     <input type="submit" value="Upload Image" style="display: none;">
 </form>
+
+<?php } else {
+	echo "Please log in to upload images.";
+	}
+?>
 
     <div class="container">
       <div class="image-container" id="imageContainer"></div>
