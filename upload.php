@@ -23,7 +23,7 @@ if (isset($_SESSION['userid'])) {
         <input type="file" name="image_upload" id="image_upload" style="display: none;" accept="image/*">
         Select an image
     </label>
-  <!--  <input type="submit" value="Upload Image" style="display: none;">   -->
+  <!--  <input type="submit" value="Upload Image" style="display: none;">   (idk what this is, doesnt do anything)  -->
 </form>
 
 <?php } else {
@@ -47,6 +47,7 @@ if (isset($_SESSION['userid'])) {
 		  <input type="text" name="Shoes" placeholder="Shoes Description...">
 		  <input type="text" name="Socks" placeholder="Socks Description...">
 		  <input type="text" name="Accessory" placeholder="Accessory Description...">
+		  <button type="submit" name="submit">UPLOAD</button>
 	  </form>
 		  
         </div>
