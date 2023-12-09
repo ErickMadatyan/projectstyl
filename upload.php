@@ -32,7 +32,7 @@ if (isset($_SESSION['userid'])) {
 ?>
 
     <div class="container">
-
+      <div class="image-container" id="imageContainer"></div>
       <div class="sidebar" id="sidebar">
         <h3>Sidebar</h3>
         <div id="sidebar-items">
