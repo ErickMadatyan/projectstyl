@@ -18,7 +18,7 @@ if (isset($_SESSION['userid'])) {
 
 
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload.inc.php" method="post" enctype="multipart/form-data">
     <label for="image_upload" class="custom-button">
         <input type="file" name="image_upload" id="image_upload" style="display: none;" accept="image/*">
         Select an image
@@ -32,7 +32,7 @@ if (isset($_SESSION['userid'])) {
 ?>
 
     <div class="container">
-      <div class="image-container" id="imageContainer"></div>
+
       <div class="sidebar" id="sidebar">
         <h3>Sidebar</h3>
         <div id="sidebar-items">
