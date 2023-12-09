@@ -36,10 +36,22 @@ if (isset($_SESSION['userid'])) {
       <div class="sidebar" id="sidebar">
         <h3>Sidebar</h3>
         <div id="sidebar-items">
-          
+          <form action="upload.inc.php" method="post" enctype="multipart/form-data">
+		  <input type="text" name="Hat" placeholder="Hat Description...">
+		  <input type="text" name="Shirt" placeholder="Shirt Description...">
+		  <input type="text" name="Sweater" placeholder="Sweater Description...">
+		  <input type="text" name="Jacket" placeholder="Jacket Description...">
+		  <input type="text" name="Pants" placeholder="Pants Description...">
+		  <input type="text" name="Shorts" placeholder="Shorts Description...">
+		  <input type="text" name="Gloves" placeholder="Gloves Description...">
+		  <input type="text" name="Shoes" placeholder="Shoes Description...">
+		  <input type="text" name="Socks" placeholder="Socks Description...">
+		  <input type="text" name="Accessory" placeholder="Accessory Description...">
+	  </form>
+		  
         </div>
-        <button class="add-item-button" id="addItemButton">Add Item</button>
-        <button class="upload-button" id="uploadButton">Upload Data</button>
+ <!--       <button class="add-item-button" id="addItemButton">Add Item</button>	-->
+<!--        <button class="upload-button" id="uploadButton">Upload Data</button>	-->
       </div>
     </div>
 </body>
