@@ -56,8 +56,6 @@ if (isset($_SESSION['userid'])) {
 	  </form>
 		  
         </div>
- <!--       <button class="add-item-button" id="addItemButton">Add Item</button>	-->
-<!--        <button class="upload-button" id="uploadButton">Upload Data</button>	-->
       </div>
     </div>
 	    } else {
