@@ -1,31 +1,7 @@
 <?php
   include 'header.php';
 ?>
-<style>
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.gallery-container a {
-  width: 30%;
-  margin-bottom: 20px;
-  text-decoration: none;
-}
-
-.gallery-container a div {
-  width: 100%;
-  height: 400px; /* Adjust the height according to your preference */
-  background-color: red;
-}
-
-.gallery-container a h3,
-.gallery-container a p {
-  text-align: center;
-  margin: 10px 0;
-}
-</style>
+  <link rel="stylesheet" href="style.css" />
 <!------------ CONTENT ------------->   
   <body>
 
