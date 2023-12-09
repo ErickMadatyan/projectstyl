@@ -31,10 +31,6 @@ if (isset($_SESSION['userid'])) {
 	}
 ?>
 
-<?php
-//check if user is logged in
-if (isset($_SESSION['userid'])) {
-    $userId = $_SESSION['userid'];
 
     <div class="container">
       <div class="image-container" id="imageContainer"></div>
@@ -58,10 +54,8 @@ if (isset($_SESSION['userid'])) {
         </div>
       </div>
     </div>
-	    } else {
-	echo "Please log in to upload images.";
-	}
-?>
+
+
 </body>
 
 <?php
