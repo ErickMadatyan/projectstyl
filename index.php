@@ -25,7 +25,7 @@
 
   .gallery-container a div {
     width: 60%;
-    height: 300px;
+    height: 500px;
     background-size: cover;
     background-position: center;
   }
