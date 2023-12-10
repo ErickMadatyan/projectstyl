@@ -3,14 +3,14 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-  .gallery-container {
+    .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .gallery-container a {
-    width: 48%;
+    width: 70%; /* Adjust the width as needed for larger area */
     margin-bottom: 20px;
     text-decoration: none;
     display: flex;
@@ -24,14 +24,14 @@
   }
 
   .gallery-container a div {
-    width: 60%;
+    width: 40%; /* Adjust the width as needed for larger area */
     height: 300px;
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 40%;
+    width: 60%; /* Adjust the width as needed for larger area */
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -41,14 +41,18 @@
 
   .gallery-container a h3 {
     font-size: 1.5em;
-    margin-top: 0; /* Ensure h3 starts at the top */
+    margin-top: 0;
     margin-bottom: 10px;
   }
 
   .gallery-container a p {
     margin: 5px 0;
     font-size: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+
 </style>
 <!------------ CONTENT ------------->   
   <body>
