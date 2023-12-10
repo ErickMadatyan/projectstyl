@@ -78,7 +78,6 @@ require_once 'dbh.inc.php';
                   echo "<p>Login Count: $loginCount</p>";
 
                   // Add a link to download the confidential file
-                  echo "<p><a href='company_confidential_file.txt' download>Download Company Confidential File</a></p>";
 
                   echo "</section>";
 
