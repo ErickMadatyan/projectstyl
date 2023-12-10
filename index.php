@@ -23,21 +23,22 @@
     transform: scale(1.05);
   }
 
-  .gallery-container a div {
-    width: 60%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-  }
+.gallery-container a div {
+   width: 100%;
+   height: 200px; /* You can adjust the height as needed */
+   background-size: cover;
+   background-position: center;
+}
 
-  .gallery-container a .item-descriptions {
-    width: 40%;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.gallery-container a .item-descriptions {
+   width: 100%; /* Adjust the width as needed */
+   padding: 20px;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   overflow: scroll;
+}
 
   .gallery-container a h3 {
     font-size: 1.5em;
