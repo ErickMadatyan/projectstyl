@@ -18,7 +18,6 @@
 .gallery-container a div {
   width: 100%;
   height: 200px; /* Adjust the height according to your preference */
-  background-color: red;
 }
 
 .gallery-container a h3,
