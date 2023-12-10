@@ -2,7 +2,7 @@
 
 if (isset($_POST['submit'])) {
 
-  $newFileName = $_POST['userUid']
+  $newFileName = $_POST['userUid'];
     if empty($_POST['userUid']) {
       $newFileName = "gallery";
     } else {
@@ -22,5 +22,6 @@ if (isset($_POST['submit'])) {
     $file = $_FILES['image_upload'];
 
   print_r($hatD);
+
 
 }
