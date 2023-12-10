@@ -85,8 +85,7 @@ require_once 'dbh.inc.php';
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
 
-                 echo "    </div>
-  </div>"
+                 echo "</div></div>";
 
                  
 $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
