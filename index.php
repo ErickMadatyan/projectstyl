@@ -55,9 +55,8 @@
       $result = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($result)) {
-    echo '<pre>';
-    print_r($row["imageFullNameGallery"]);
-    echo '</pre>';
+    echo "right here";
+
       }
     }
 
