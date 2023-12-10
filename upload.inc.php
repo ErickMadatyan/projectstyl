@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
     $socksD = $_POST['Socks'];
     $accessoryD = $_POST['Accessory'];
     $file = $_FILES['image_upload'];
-    
+
+  print_r($file);
 
 }
