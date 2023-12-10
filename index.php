@@ -10,7 +10,7 @@
   }
 
   .gallery-container a {
-    width: 500px;
+    width: 80%;
     margin-bottom: 20px;
     text-decoration: none;
     display: flex;
