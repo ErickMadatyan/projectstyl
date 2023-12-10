@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                   $rowCount = mysqli_num_rows($result);
                   $setImageOrder = $rowCount + 1;
 
-                  $sql = "INSERT INTO gallery (userId, imageTitle, imgFullNameGallery, orderGallery, hatDESC, shirtDESC, sweaterDESC, jacketDESC, pantsDESC, shortsDESC, glovesDESC, shoesDESC, socksDESC, accessoryDESC) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                  $sql = "INSERT INTO gallery (usersName, imageTitle, imgFullNameGallery, orderGallery, hatDESC, shirtDESC, sweaterDESC, jacketDESC, pantsDESC, shortsDESC, glovesDESC, shoesDESC, socksDESC, accessoryDESC) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                   if (!mysqli_stmt_prepare($stmt, $sql)) {
                   echo "SQL statement failed";
                 } else {
