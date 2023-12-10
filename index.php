@@ -3,41 +3,42 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-   .gallery-container {
+  .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .gallery-container a {
-    width: 30%;
+    width: 45%; /* Adjust the width as needed */
     margin-bottom: 20px;
     text-decoration: none;
     display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd; /* Add a border for better separation */
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    flex-direction: row; /* Display image and text side by side */
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
   }
 
   .gallery-container a:hover {
-    transform: scale(1.05); /* Enlarge the image on hover for a subtle effect */
+    transform: scale(1.05);
   }
 
   .gallery-container a div {
-    width: 100%;
+    width: 50%; /* Adjust the width as needed */
     height: 300px;
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
+    width: 50%; /* Adjust the width as needed */
+    text-align: left; /* Align text to the left */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the width */
   }
 
   .gallery-container a h3 {
-    margin: 10px 0;
+    margin-bottom: 10px;
     font-size: 1.2em;
   }
 
