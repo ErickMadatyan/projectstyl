@@ -9,15 +9,15 @@
     justify-content: space-around;
   }
 
-  .gallery-container a {
-    width: 80%;
-    margin-bottom: 20px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease-in-out;
-  }
+.gallery-container a {
+   flex: 0 0 48%; /* Adjust the flex-basis as needed */
+   margin-bottom: 20px;
+   text-decoration: none;
+   display: flex;
+   flex-direction: row; /* Display image and text side by side */
+   border: 1px solid #ddd;
+   transition: transform 0.3s ease-in-out;
+}
 
   .gallery-container a:hover {
     transform: scale(1.05);
