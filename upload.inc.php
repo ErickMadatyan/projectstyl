@@ -3,7 +3,7 @@
 if (isset($_POST['submit'])) {
 
   $newFileName = $_POST['Title'];
-    if (empty($_POST['Title'])) {
+    if (empty($newFileName)) {
       $newFileName = "gallery";
     } else {
       $newFileName = strtolower(str_replace(" ", "-", $newFileName));
