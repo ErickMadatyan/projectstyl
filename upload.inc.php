@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
       $newFileName = strtolower(str_replace(" ", "-", $newFileName));
     }
 
-  $userId = $_SESSION["useruid"]
+  $userId = $_SESSION["useruid"];
   
     $imageTitle = $_POST['Title'];
     $hatD = $_POST['Hat'];
