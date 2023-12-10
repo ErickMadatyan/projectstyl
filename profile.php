@@ -22,7 +22,7 @@ require_once 'dbh.inc.php';
                   $userName = $row['usersName'];
                   $lastLogin = $row['last_login'];
                   $loginCount = $row['login_count'];
-
+                  $uid = $row['usersUid'];
                   // Display user information
                   echo "<section class='profile-info'>";
                   echo "<h2>Welcome to Your Profile, $userName!</h2>";
@@ -36,7 +36,7 @@ require_once 'dbh.inc.php';
 
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
-                  $sqlUploads = "SELECT * FROM gallery WHERE usersName = $userName ORDER BY orderGallery DESC";
+                  $sqlUploads = "SELECT * FROM gallery WHERE usersName = $uid ORDER BY orderGallery DESC";
                   $resultUploads = mysqli_query($conn, $sqlUploads);
 
                   if ($resultUploads) {
