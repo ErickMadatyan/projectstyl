@@ -8,6 +8,9 @@ if (isset($_POST['submit'])) {
     } else {
       $newFileName = strtolower(str_replace(" ", "-", $newFileName));
     }
+
+  $userId = $_SESSION["useruid"]
+  
     $imageTitle = $_POST['Title'];
     $hatD = $_POST['Hat'];
     $shirtD = $_POST['Shirt'];
@@ -55,11 +58,11 @@ if (isset($_POST['submit'])) {
                   $rowCount = mysqli_num_rows($result);
                   $setImageOrder = $rowCount + 1;
 
-                  $sql = "INSERT INTO gallery (imageTitle, imgFullNameGallery, orderGallery, hatDESC, shirtDESC, sweaterDESC, jacketDESC, pantsDESC, shortsDESC, glovesDESC, shoesDESC, socksDESC, accessoryDESC) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                  $sql = "INSERT INTO gallery (userId, imageTitle, imgFullNameGallery, orderGallery, hatDESC, shirtDESC, sweaterDESC, jacketDESC, pantsDESC, shortsDESC, glovesDESC, shoesDESC, socksDESC, accessoryDESC) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                   if (!mysqli_stmt_prepare($stmt, $sql)) {
                   echo "SQL statement failed";
                 } else {
-                    mysqli_stmt_bind_param($stmt, "sssssssssssss", $imageTitle, $imageFullName, $setImageOrder, $hatD, $shirtD, $sweaterD, $jacketD, $pantsD, $shortsD, $glovesD, $shoesD, $socksD, $accessoryD);
+                    mysqli_stmt_bind_param($stmt, "ssssssssssssss", $userId, $imageTitle, $imageFullName, $setImageOrder, $hatD, $shirtD, $sweaterD, $jacketD, $pantsD, $shortsD, $glovesD, $shoesD, $socksD, $accessoryD);
                     mysqli_stmt_execute($stmt);
 
                     move_uploaded_file($fileTempName, $fileDestination);
