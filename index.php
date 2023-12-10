@@ -3,14 +3,14 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-  .gallery-container {
+   .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .gallery-container a {
-    width: 45%; /* Adjust the width as needed */
+    width: 48%; /* Adjust the width as needed */
     margin-bottom: 20px;
     text-decoration: none;
     display: flex;
@@ -24,22 +24,25 @@
   }
 
   .gallery-container a div {
-    width: 50%; /* Adjust the width as needed */
+    width: 60%; /* Adjust the width as needed */
     height: 300px;
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 50%; /* Adjust the width as needed */
+    width: 40%; /* Adjust the width as needed */
     text-align: left; /* Align text to the left */
     padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box; /* Include padding in the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .gallery-container a h3 {
-    margin-bottom: 10px;
     font-size: 1.2em;
+    margin-bottom: 10px;
   }
 
   .gallery-container a p {
