@@ -9,11 +9,19 @@
   justify-content: space-around;
 }
 
-.gallery-container a {
-  width: 30%;
-  margin-bottom: 20px;
-  text-decoration: none;
-}
+ .gallery-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+
+  .gallery-container a .item-descriptions {
+    width: 100%;
+    text-align: center;
+  }
 
 .gallery-container a div {
   width: 200%;
@@ -55,21 +63,23 @@
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 
-while($row = mysqli_fetch_assoc($result)) {
-          echo '<a href="#">
-<div style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"> </div>
-            <h3>'.$row["imageTitle"].'</h3>
-            <p>'.$row["hatDESC"].'</p>
-            <p>'.$row["shirtDESC"].'</p>
-            <p>'.$row["sweaterDESC"].'</p>
-            <p>'.$row["jacketDESC"].'</p>
-            <p>'.$row["pantsDESC"].'</p>
-            <p>'.$row["shortsDESC"].'</p>
-            <p>'.$row["glovesDESC"].'</p>
-            <p>'.$row["shoesDESC"].'</p>
-            <p>'.$row["socksDESC"].'</p>
-            <p>'.$row["accessoryDESC"].'</p>
-          </a>';
+ while($row = mysqli_fetch_assoc($result)) {
+            echo '<a href="#">
+                    <div style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>
+                    <div class="item-descriptions">
+                        <h3>'.$row["imageTitle"].'</h3>
+                        <p>'.$row["hatDESC"].'</p>
+                        <p>'.$row["shirtDESC"].'</p>
+                        <p>'.$row["sweaterDESC"].'</p>
+                        <p>'.$row["jacketDESC"].'</p>
+                        <p>'.$row["pantsDESC"].'</p>
+                        <p>'.$row["shortsDESC"].'</p>
+                        <p>'.$row["glovesDESC"].'</p>
+                        <p>'.$row["shoesDESC"].'</p>
+                        <p>'.$row["socksDESC"].'</p>
+                        <p>'.$row["accessoryDESC"].'</p>
+                    </div>
+                  </a>';
       }
     }
 
