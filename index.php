@@ -16,8 +16,8 @@
 }
 
 .gallery-container a div {
-  width: 200px;
-  height: 400px; /* Adjust the height according to your preference */
+  width: 100%;
+  height: 200px; /* Adjust the height according to your preference */
   background-size: cover;
   background-position: center;
 }
