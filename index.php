@@ -42,7 +42,6 @@
     <section class="gallery-links">
       <div class="wrapper">
         <h2>Gallery</h2>
-
         <div class="gallery-container">
           <?php
     include_once 'dbh.inc.php';
