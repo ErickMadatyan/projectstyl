@@ -10,11 +10,11 @@
   }
 
   .gallery-container a {
-    width: 48%; /* Adjust the width as needed */
+    width: 48%;
     margin-bottom: 20px;
     text-decoration: none;
     display: flex;
-    flex-direction: row; /* Display image and text side by side */
+    flex-direction: row;
     border: 1px solid #ddd;
     transition: transform 0.3s ease-in-out;
   }
@@ -24,31 +24,31 @@
   }
 
   .gallery-container a div {
-    width: 60%; /* Adjust the width as needed */
+    width: 60%;
     height: 300px;
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 40%; /* Adjust the width as needed */
-    padding: 20px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Include padding in the width */
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .gallery-container a h3 {
-    font-size: 1.5em; /* Increase title font size for visibility */
+    font-size: 1.5em;
+    margin-top: 0; /* Ensure h3 starts at the top */
     margin-bottom: 10px;
   }
 
   .gallery-container a p {
     margin: 5px 0;
-    font-size: 0.9em; /* Increase text font size for visibility */
+    font-size: 0.9em;
   }
-
 </style>
 <!------------ CONTENT ------------->   
   <body>
