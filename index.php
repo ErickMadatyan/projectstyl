@@ -3,7 +3,7 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-  .gallery-container {
+   .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -13,14 +13,19 @@
     width: 30%;
     margin-bottom: 20px;
     text-decoration: none;
-    display: flex; /* Make the container flex */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center items horizontally */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd; /* Add a border for better separation */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+
+  .gallery-container a:hover {
+    transform: scale(1.05); /* Enlarge the image on hover for a subtle effect */
   }
 
   .gallery-container a div {
-    width: 100%; /* Adjust the width */
-    height: 300px; /* Adjust the height according to your preference */
+    width: 100%;
+    height: 300px;
     background-size: cover;
     background-position: center;
   }
@@ -28,14 +33,16 @@
   .gallery-container a .item-descriptions {
     width: 100%;
     text-align: center;
-    display: flex; /* Make it a flex container */
-    flex-direction: row; /* Arrange children horizontally */
-    justify-content: space-around; /* Add space between items */
+    padding: 10px;
   }
 
-  .gallery-container a h3,
-  .gallery-container a p {
+  .gallery-container a h3 {
     margin: 10px 0;
+    font-size: 1.2em;
+  }
+
+  .gallery-container a p {
+    margin: 5px 0;
   }
 
 </style>
