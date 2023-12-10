@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
     if (in_array($fileActualExt, $allowed)){
       if ($fileError === 0){
-        if ($fileSize < 20000) {
+        if ($fileSize < 20000000) {
           $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
           $fileDestination = "../../../var/log/myapp/" . $imageFullName;
 
