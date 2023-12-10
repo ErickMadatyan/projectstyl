@@ -21,5 +21,5 @@ if (isset($_POST['submit'])) {
     $accessoryD = $_POST['Accessory'];
     $file = $_FILES['image_upload'];
 
-    print_r($hatD);
+    print_r($file);
 }
