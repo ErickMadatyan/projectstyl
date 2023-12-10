@@ -45,28 +45,26 @@
         <h2>Gallery</h2>
 
         <div class="gallery-container">
-          <a href="#">
-            <div> </div>
-            <h3>This is a title</h3>
-            <p>This is a paragraph</p>
-          </a>
-          <a href="#">
-            <div> </div>
-            <h3>This is a title</h3>
-            <p>This is a paragraph</p>
-          </a>
-          <a href="#">
-            <div> </div>
-            <h3>This is a title</h3>
-            <p>This is a paragraph</p>
-          </a>
-          <a href="#">
-            <div> </div>
-            <h3>This is a title</h3>
-            <p>This is a paragraph</p>
-          </a>
-          
-          
+          <?php
+    include_once 'dbh.inc.php';
+    $sql = "SELECT * FROM gallery ORDER BY orderGallery DESC"
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+      echo "SQL STATEMENT FAILED!";
+    } else {
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      while($row = mysqli_fetch_assoc($result)) {
+          echo '<a href="#">
+            <div style="background-image: url(../../../var/log/myapp/'.$row["imageFullNameGallery"].');"> </div>
+            <h3>'.$row["imageTitle"].'</h3>
+            <p>'.$row["hatDESC"].'</p>
+          </a>';
+      }
+    }
+
+            ?>
         </div>
 
       </div>
