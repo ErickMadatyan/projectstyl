@@ -3,7 +3,7 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-   .gallery-container {
+    .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -24,15 +24,14 @@
   }
 
   .gallery-container a div {
-    width: 60%; /* Adjust the width as needed */
+    width: 70%; /* Adjust the width as needed */
     height: 300px;
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 40%; /* Adjust the width as needed */
-    text-align: left; /* Align text to the left */
+    width: 30%; /* Adjust the width as needed */
     padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box; /* Include padding in the width */
     display: flex;
@@ -47,6 +46,9 @@
 
   .gallery-container a p {
     margin: 5px 0;
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
   }
 
 </style>
