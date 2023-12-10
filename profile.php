@@ -36,8 +36,11 @@ require_once 'dbh.inc.php';
 
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
-                  $sqlUploads = "SELECT * FROM gallery WHERE usersName = $uid ORDER BY orderGallery DESC";
-                  $resultUploads = mysqli_query($conn, $sqlUploads);
+$sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
+$stmt = mysqli_prepare($conn, $sqlUploads);
+mysqli_stmt_bind_param($stmt, "s", $uid);
+mysqli_stmt_execute($stmt);
+$resultUploads = mysqli_stmt_get_result($stmt);
 
                   if ($resultUploads) {
                       echo "<div class='gallery-container'>";
