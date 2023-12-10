@@ -43,6 +43,7 @@ echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHELO " . $_
         <h3>Sidebar</h3>
         <div id="sidebar-items">
           <form action="upload.inc.php" method="post" enctype="multipart/form-data">
+		  <input type="text" name="Title" placeholder="Outfit Title...">
 		  <input type="text" name="Hat" placeholder="Hat Description...">
 		  <input type="text" name="Shirt" placeholder="Shirt Description...">
 		  <input type="text" name="Sweater" placeholder="Sweater Description...">
