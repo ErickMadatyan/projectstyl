@@ -58,8 +58,17 @@
 while($row = mysqli_fetch_assoc($result)) {
           echo '<a href="#">
 <div style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"> </div>
-            <h3>'.$row["imgFullNameGallery"].'</h3>
+            <h3>'.$row["imageTitle"].'</h3>
             <p>'.$row["hatDESC"].'</p>
+            <p>'.$row["shirtDESC"].'</p>
+            <p>'.$row["sweaterDESC"].'</p>
+            <p>'.$row["jacketDESC"].'</p>
+            <p>'.$row["pantsDESC"].'</p>
+            <p>'.$row["shortsDESC"].'</p>
+            <p>'.$row["glovesDESC"].'</p>
+            <p>'.$row["shoesDESC"].'</p>
+            <p>'.$row["socksDESC"].'</p>
+            <p>'.$row["accessoryDESC"].'</p>
           </a>';
       }
     }
