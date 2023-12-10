@@ -2,7 +2,55 @@
 include 'header.php';
 require_once 'dbh.inc.php';
 ?>
+<style>
+   .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
+.gallery-container a {
+   flex: 0 0 48%; /* Adjust the flex-basis as needed */
+   margin-bottom: 20px;
+   text-decoration: none;
+   display: flex;
+   flex-direction: row; /* Display image and text side by side */
+   border: 1px solid #ddd;
+   transition: transform 0.3s ease-in-out;
+}
+
+  .gallery-container a:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery-container a div {
+    width: 60%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-container a .item-descriptions {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+  }
+
+  .gallery-container a h3 {
+    font-size: 1.5em;
+    margin-top: 0; /* Ensure h3 starts at the top */
+    margin-bottom: 10px;
+  }
+
+  .gallery-container a p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+</style>
 <!------------ CONTENT ------------->
 <body>
   <div class="content-wrap">
