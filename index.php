@@ -3,38 +3,41 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
- .gallery-container a {
+  .gallery-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .gallery-container a {
     width: 30%;
     margin-bottom: 20px;
     text-decoration: none;
+    display: flex; /* Make the container flex */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .gallery-container a div {
+    width: 100%; /* Adjust the width */
+    height: 300px; /* Adjust the height according to your preference */
+    background-size: cover;
+    background-position: center;
   }
 
   .gallery-container a .item-descriptions {
     width: 100%;
     text-align: center;
+    display: flex; /* Make it a flex container */
+    flex-direction: row; /* Arrange children horizontally */
+    justify-content: space-around; /* Add space between items */
   }
 
-.gallery-container a div {
-  width: 200%;
-  height: 300px; /* Adjust the height according to your preference */
-  background-size: cover;
-  background-position: center;
-}
+  .gallery-container a h3,
+  .gallery-container a p {
+    margin: 10px 0;
+  }
 
-.gallery-container a h3,
-.gallery-container a p {
-  text-align: center;
-  margin: 10px 0;
-}
 </style>
 <!------------ CONTENT ------------->   
   <body>
