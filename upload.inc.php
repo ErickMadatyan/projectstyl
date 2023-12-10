@@ -2,12 +2,12 @@
 
 if (isset($_POST['submit'])) {
 
-  $newFileName = $_POST['userUid'];
-    if empty($_POST['userUid']) {
+  $newFileName = $_POST['Title'];
+    if (empty($_POST['Title'])) {
       $newFileName = "gallery";
     } else {
-      $newFileName = $newFileName;
-}
+      $newFileName = strtolower(str_replace(" ", "-", $newFileName));
+    }
 
     $hatD = $_POST['Hat'];
     $shirtD = $_POST['Shirt'];
@@ -21,7 +21,5 @@ if (isset($_POST['submit'])) {
     $accessoryD = $_POST['Accessory'];
     $file = $_FILES['image_upload'];
 
-  print_r($hatD);
-
-
+    print_r($hatD);
 }
