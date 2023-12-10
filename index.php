@@ -54,8 +54,7 @@
 <!------------ CONTENT ------------->   
   <body>
 
-  <div class="content-wrap">
-    <div class="column-left">
+
 
               <?php
           if(isset($_SESSION["useruid"])) {
@@ -104,8 +103,7 @@
       </div>
     </section>
       
-    </div>  
-  </div>
+
 <?php
   include 'footer.php';
 ?>
