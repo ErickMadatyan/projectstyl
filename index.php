@@ -55,8 +55,11 @@
       $result = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($result)) {
-    echo "right here";
-
+          echo '<a href="#">
+            <div style="background-image: url(../../../../var/log/myapp/'.$row["imgFullNameGallery"].');"> </div>
+            <h3>'.$row["imageTitle"].'</h3>
+            <p>'.$row["hatDESC"].'</p>
+          </a>';
       }
     }
 
