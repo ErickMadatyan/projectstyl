@@ -47,7 +47,8 @@ if (isset($_POST['submit'])) {
                 $sql = "SELECT * FROM gallery;";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                  echo "SQL statement failed";
+                  echo "SQL statement failed" . mysqli_error($conn);
+                  exit();
                 } else {
                   mysqli_stmt_execute($stmt);
                   $result = mysqli_stmt_get_result($stmt);
