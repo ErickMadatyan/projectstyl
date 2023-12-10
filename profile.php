@@ -14,7 +14,7 @@ require_once 'dbh.inc.php';
               $userId = $_SESSION['userid'];
 
               // Fetch user details from the database
-              $sql = "SELECT usersName, last_login, login_count FROM users WHERE usersId = $userId";
+              $sql = "SELECT usersName, last_login, login_count, usersUid FROM users WHERE usersId = $userId";
               $result = mysqli_query($conn, $sql);
 
               if ($result) {
