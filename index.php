@@ -3,18 +3,18 @@
 ?>
 <!-- style sheet is working properly here for some reason -->
 <style>
-    .gallery-container {
+  .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .gallery-container a {
-    width: 70%; /* Adjust the width as needed for larger area */
-    margin-bottom: 20px;
+    width: calc(25% - 20px); /* Adjust the width as needed with margins */
+    margin: 10px; /* Adjust margins as needed */
     text-decoration: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 1px solid #ddd;
     transition: transform 0.3s ease-in-out;
   }
@@ -24,15 +24,15 @@
   }
 
   .gallery-container a div {
-    width: 40%; /* Adjust the width as needed for larger area */
-    height: 300px;
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
     background-size: cover;
     background-position: center;
   }
 
   .gallery-container a .item-descriptions {
-    width: 60%; /* Adjust the width as needed for larger area */
-    padding: 20px;
+    width: 100%;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@
   .gallery-container a h3 {
     font-size: 1.5em;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .gallery-container a p {
@@ -52,7 +52,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
 </style>
 <!------------ CONTENT ------------->   
   <body>
