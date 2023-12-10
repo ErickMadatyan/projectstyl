@@ -84,6 +84,11 @@ require_once 'dbh.inc.php';
 
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
+
+                 echo "    </div>
+  </div>"
+
+                 
 $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
 $stmt = mysqli_prepare($conn, $sqlUploads);
 mysqli_stmt_bind_param($stmt, "s", $uid);
@@ -125,8 +130,7 @@ $resultUploads = mysqli_stmt_get_result($stmt);
           }
         ?>
       </section>
-    </div>
-  </div>
+
 
   <?php
     include 'footer.php';
