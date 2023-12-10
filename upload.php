@@ -28,12 +28,12 @@ if (isset($_SESSION['userid'])) {
 //check if user is logged in
 if (isset($_SESSION['userid'])) {
     $userId = $_SESSION['userid'];
-echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHELO " . $_SESSION["useruid"];
+//echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHELO " . $_SESSION["useruid"];
 ?>
     <div class="container">
       <div class="image-container" id="imageContainer"></div>
       <div class="sidebar" id="sidebar">
-        <h3>Sidebar</h3>
+        <h3>Outfit Info!</h3>
         <div id="sidebar-items">
           <form action="upload.inc.php" method="post" enctype="multipart/form-data">
 		  
