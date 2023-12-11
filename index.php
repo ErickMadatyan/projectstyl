@@ -29,9 +29,11 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+      background-color: #99ccff
+    
   }
 
-  .gallery-container a .item-descriptions {
+   .gallery-container a .item-descriptions {
     width: 40%;
     padding: 20px;
     box-sizing: border-box;
@@ -39,17 +41,23 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: scroll;
+    font-family: 'Open Sans', sans-serif; /* Use Open Sans font for item descriptions */
+    color: #333; /* Set text color to a readable color */
+    background-color: #99ccff
+   
   }
 
-  .gallery-container a h3 {
-    font-size: 1.5em;
-    margin-top: 0; /* Ensure h3 starts at the top */
+    .gallery-container a h3 {
+    font-size: 1.8em; /* Increase font size for headings */
+    margin-top: 0;
     margin-bottom: 10px;
+    color: #007BFF; /* Set a color for headings */
   }
 
-  .gallery-container a p {
+ .gallery-container a p {
     margin: 5px 0;
-    font-size: 0.9em;
+    font-size: 1em; /* Adjust font size for paragraphs */
+    line-height: 1.4; /* Improve line spacing for readability */
   }
 </style>
 <!------------ CONTENT ------------->   
