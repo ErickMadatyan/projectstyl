@@ -26,8 +26,9 @@
   .gallery-container a div {
     width: 60%;
     height: 500px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
   }
 
   .gallery-container a .item-descriptions {
