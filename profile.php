@@ -9,15 +9,15 @@ require_once 'dbh.inc.php';
     justify-content: space-around;
   }
 
-.gallery-container a {
-   flex: 0 0 48%; /* Adjust the flex-basis as needed */
-   margin-bottom: 20px;
-   text-decoration: none;
-   display: flex;
-   flex-direction: row; /* Display image and text side by side */
-   border: 1px solid #ddd;
-   transition: transform 0.3s ease-in-out;
-}
+  .gallery-container a {
+    flex: 0 0 48%; /* Adjust the flex-basis as needed */
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row; /* Display image and text side by side */
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+  }
 
   .gallery-container a:hover {
     transform: scale(1.05);
@@ -51,6 +51,7 @@ require_once 'dbh.inc.php';
     font-size: 0.9em;
   }
 </style>
+
 <!------------ CONTENT ------------->
 <body>
   <div class="content-wrap">
@@ -84,13 +85,13 @@ require_once 'dbh.inc.php';
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
 
-                 echo "</div></div>";
+                  echo "</div></div>";
 
-                 $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
-                 $stmt = mysqli_prepare($conn, $sqlUploads);
-                 mysqli_stmt_bind_param($stmt, "s", $uid);
-                 mysqli_stmt_execute($stmt);
-                 $resultUploads = mysqli_stmt_get_result($stmt);
+                  $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
+                  $stmt = mysqli_prepare($conn, $sqlUploads);
+                  mysqli_stmt_bind_param($stmt, "s", $uid);
+                  mysqli_stmt_execute($stmt);
+                  $resultUploads = mysqli_stmt_get_result($stmt);
 
                   if ($resultUploads) {
                       echo "<div class='gallery-container'>";
@@ -102,16 +103,35 @@ require_once 'dbh.inc.php';
                                       <h3>'.$rowUploads["imageTitle"].'</h3>';
 
                           // Display each description only if not empty or null
-                          $descriptions = array(
-                              "hatDESC", "shirtDESC", "sweaterDESC", "jacketDESC", "pantsDESC",
-                              "shortsDESC", "glovesDESC", "shoesDESC", "socksDESC", "accessoryDESC"
-                          );
-
-                          foreach ($descriptions as $desc) {
-                              $descriptionValue = trim($rowUploads[$desc]);
-                              if (!empty($descriptionValue)) {
-                                  echo '<p>' . $descriptionValue . '</p>';
-                              }
+                          if ($rowUploads["hatDESC"] !== '' && $rowUploads["hatDESC"] !== null) {
+                              echo '<p>'.$rowUploads["hatDESC"].'</p>';
+                          }
+                          if ($rowUploads["shirtDESC"] !== '' && $rowUploads["shirtDESC"] !== null) {
+                              echo '<p>'.$rowUploads["shirtDESC"].'</p>';
+                          }
+                          if ($rowUploads["sweaterDESC"] !== '' && $rowUploads["sweaterDESC"] !== null) {
+                              echo '<p>'.$rowUploads["sweaterDESC"].'</p>';
+                          }
+                          if ($rowUploads["jacketDESC"] !== '' && $rowUploads["jacketDESC"] !== null) {
+                              echo '<p>'.$rowUploads["jacketDESC"].'</p>';
+                          }
+                          if ($rowUploads["pantsDESC"] !== '' && $rowUploads["pantsDESC"] !== null) {
+                              echo '<p>'.$rowUploads["pantsDESC"].'</p>';
+                          }
+                          if ($rowUploads["shortsDESC"] !== '' && $rowUploads["shortsDESC"] !== null) {
+                              echo '<p>'.$rowUploads["shortsDESC"].'</p>';
+                          }
+                          if ($rowUploads["glovesDESC"] !== '' && $rowUploads["glovesDESC"] !== null) {
+                              echo '<p>'.$rowUploads["glovesDESC"].'</p>';
+                          }
+                          if ($rowUploads["shoesDESC"] !== '' && $rowUploads["shoesDESC"] !== null) {
+                              echo '<p>'.$rowUploads["shoesDESC"].'</p>';
+                          }
+                          if ($rowUploads["socksDESC"] !== '' && $rowUploads["socksDESC"] !== null) {
+                              echo '<p>'.$rowUploads["socksDESC"].'</p>';
+                          }
+                          if ($rowUploads["accessoryDESC"] !== '' && $rowUploads["accessoryDESC"] !== null) {
+                              echo '<p>'.$rowUploads["accessoryDESC"].'</p>';
                           }
 
                           echo '</div>
@@ -132,8 +152,9 @@ require_once 'dbh.inc.php';
         ?>
       </section>
 
-
-  <?php
-    include 'footer.php';
-  ?>
+      <?php
+        include 'footer.php';
+      ?>
+    </div>
+  </div>
 </body>
