@@ -103,7 +103,7 @@ require_once 'dbh.inc.php';
                                       <h3>'.$rowUploads["imageTitle"].'</h3>';
 
                           // Display each description only if not empty or null
-                          if ($rowUploads["hatDESC"] !=== '' && $rowUploads["hatDESC"] !=== null) {
+                          if ($rowUploads["hatDESC"] !== '' && $rowUploads["hatDESC"] !== null) {
                               echo '<p>'.$rowUploads["hatDESC"].'</p>';
                           }
                           if ($rowUploads["shirtDESC"] !== '' && $rowUploads["shirtDESC"] !== null) {
