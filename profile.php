@@ -86,14 +86,13 @@ require_once 'dbh.inc.php';
 
                  echo "</div></div>";
 
-                 
-$sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
-$stmt = mysqli_prepare($conn, $sqlUploads);
-mysqli_stmt_bind_param($stmt, "s", $uid);
-mysqli_stmt_execute($stmt);
-$resultUploads = mysqli_stmt_get_result($stmt);
+                 $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
+                 $stmt = mysqli_prepare($conn, $sqlUploads);
+                 mysqli_stmt_bind_param($stmt, "s", $uid);
+                 mysqli_stmt_execute($stmt);
+                 $resultUploads = mysqli_stmt_get_result($stmt);
 
-                                      if ($resultUploads) {
+                  if ($resultUploads) {
                       echo "<div class='gallery-container'>";
                       while ($rowUploads = mysqli_fetch_assoc($resultUploads)) {
                           // Display each image upload
@@ -109,8 +108,9 @@ $resultUploads = mysqli_stmt_get_result($stmt);
                           );
 
                           foreach ($descriptions as $desc) {
-                              if (!empty($rowUploads[$desc]) && $rowUploads[$desc] !== null) {
-                                  echo '<p>' . $rowUploads[$desc] . '</p>';
+                              $descriptionValue = trim($rowUploads[$desc]);
+                              if (!empty($descriptionValue)) {
+                                  echo '<p>' . $descriptionValue . '</p>';
                               }
                           }
 
