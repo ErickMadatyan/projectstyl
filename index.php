@@ -27,6 +27,7 @@
       flex-direction: row;
       border: 1px solid #ddd;
       transition: transform 0.3s ease-in-out;
+      overflow: hidden;
     }
 
     .gallery-container a:hover {
