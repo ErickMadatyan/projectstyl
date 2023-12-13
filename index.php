@@ -4,6 +4,11 @@
 <!-- style sheet is working properly here for some reason -->
 
   <style>
+      .greeting {
+    text-align: center;
+    font-size: 1.5em; /* Adjust the font size as needed */
+    color: #007BFF; /* Adjust the color as needed */
+  }
       .gallery-heading {
     text-align: center;
     margin-bottom: 20px; /* You can adjust this margin as needed */
@@ -86,11 +91,11 @@
 
   <body>
 
-    <?php
-      if(isset($_SESSION["useruid"])) {
-        echo "<p>Hello There " . $_SESSION["useruid"] . "</p>";
-      }
-    ?>
+  <?php
+    if(isset($_SESSION["useruid"])) {
+      echo "<p class='greeting'>Hello There " . $_SESSION["useruid"] . "</p>";
+    }
+  ?>
 <div class="content-wrap">
     <div class="column-left">
     <section class="gallery-links">
