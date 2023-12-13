@@ -102,7 +102,7 @@ footer{
 }
 /*--------------- Content Wrappers ---------------*/
 .content-wrap {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0;
   padding: 0;
   padding-left: 200px;
@@ -127,7 +127,7 @@ footer{
 }
 .column-left {
   float: left;
-  width: 70%;
+  width: 100%;
 }
 /*new*/
 /*.content-center {
