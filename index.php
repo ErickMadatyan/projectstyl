@@ -81,7 +81,8 @@
         echo "<p>Hello There " . $_SESSION["useruid"] . "</p>";
       }
     ?>
-
+<div class="content-wrap">
+    <div class="column-left">
     <section class="gallery-links">
       <div class="wrapper">
         <h2>Gallery</h2>
@@ -117,6 +118,8 @@
           ?>
         </div>
       </div>
+    </div>
+    </div>
     </section>
   </body>
       
