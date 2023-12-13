@@ -4,6 +4,10 @@
 <!-- style sheet is working properly here for some reason -->
 
   <style>
+      .gallery-heading {
+    text-align: center;
+    margin-bottom: 20px; /* You can adjust this margin as needed */
+  }
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
@@ -85,7 +89,9 @@
     <div class="column-left">
     <section class="gallery-links">
       <div class="wrapper">
-        <h2>Gallery</h2>
+  <div class="gallery-heading">
+    <h2>Gallery</h2>
+  </div>
         <div class="gallery-container">
           <?php
             include_once 'dbh.inc.php';
