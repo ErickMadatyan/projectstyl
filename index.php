@@ -8,6 +8,8 @@
     text-align: center;
     font-size: 1.5em; /* Adjust the font size as needed */
     color: #007BFF; /* Adjust the color as needed */
+            float: left;
+    width: 100%;
   }
       .gallery-heading {
     text-align: center;
