@@ -93,7 +93,7 @@ mysqli_stmt_bind_param($stmt, "s", $uid);
 mysqli_stmt_execute($stmt);
 $resultUploads = mysqli_stmt_get_result($stmt);
 
-                     if ($resultUploads) {
+                                      if ($resultUploads) {
                       echo "<div class='gallery-container'>";
                       while ($rowUploads = mysqli_fetch_assoc($resultUploads)) {
                           // Display each image upload
@@ -102,24 +102,17 @@ $resultUploads = mysqli_stmt_get_result($stmt);
                                   <div class="item-descriptions">
                                       <h3>'.$rowUploads["imageTitle"].'</h3>';
 
-                          // Helper function to display a description if not empty or null
-                          function displayDescription($desc) {
-                              if ($desc !== '' && $desc !== null) {
-                                  echo '<p>'.$desc.'</p>';
+                          // Display each description only if not empty or null
+                          $descriptions = array(
+                              "hatDESC", "shirtDESC", "sweaterDESC", "jacketDESC", "pantsDESC",
+                              "shortsDESC", "glovesDESC", "shoesDESC", "socksDESC", "accessoryDESC"
+                          );
+
+                          foreach ($descriptions as $desc) {
+                              if (!empty($rowUploads[$desc]) && $rowUploads[$desc] !== null) {
+                                  echo '<p>' . $rowUploads[$desc] . '</p>';
                               }
                           }
-
-                          // Display each description using the helper function
-                          displayDescription($rowUploads["hatDESC"]);
-                          displayDescription($rowUploads["shirtDESC"]);
-                          displayDescription($rowUploads["sweaterDESC"]);
-                          displayDescription($rowUploads["jacketDESC"]);
-                          displayDescription($rowUploads["pantsDESC"]);
-                          displayDescription($rowUploads["shortsDESC"]);
-                          displayDescription($rowUploads["glovesDESC"]);
-                          displayDescription($rowUploads["shoesDESC"]);
-                          displayDescription($rowUploads["socksDESC"]);
-                          displayDescription($rowUploads["accessoryDESC"]);
 
                           echo '</div>
                                 </a>';
