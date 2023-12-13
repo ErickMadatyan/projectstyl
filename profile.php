@@ -112,21 +112,23 @@ require_once 'dbh.inc.php';
                   if ($resultUploads) {
                       echo "<div class='gallery-container'>";
                       while ($rowUploads = mysqli_fetch_assoc($resultUploads)) {
-                          // Display each image upload
-                          echo '<a href="#">
-                                  <div style="background-image: url(imgs/'.$rowUploads["imgFullNameGallery"].');"></div>
-                                  <div class="item-descriptions">
-                                      <h3>'.$rowUploads["imageTitle"].'</h3>';
+    // Display each image upload
+    echo '<a href="#">
+            <div style="background-image: url(imgs/'.$rowUploads["imgFullNameGallery"].');"></div>
+            <div class="item-descriptions">
+                <h3>'.$rowUploads["imageTitle"].'</h3>';
 
-                          // Display each description only if not empty or null
-                          if ($rowUploads["hatDESC"] !== '' && $rowUploads["hatDESC"] !== null) {
-                              echo '<p>'.$rowUploads["hatDESC"].'</p>';
-                          }
-                          // ... (repeat for other items)
+    // Display each description if not empty or null for each item
+    $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
+    foreach ($items as $item) {
+        if (!empty($rowUploads[$item . "DESC"]) && $rowUploads[$item . "DESC"] !== null) {
+            echo '<p><strong>' . ucfirst($item) . ':</strong> ' . $rowUploads[$item . "DESC"] . '</p>';
+        }
+    }
 
-                          echo '</div>
-                                </a>';
-                      }
+    echo '</div>
+            </a>';
+}
                       echo "</div>";
                   } else {
                       echo "<p>Error fetching user uploads: " . mysqli_error($conn) . "</p>";
