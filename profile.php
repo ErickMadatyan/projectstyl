@@ -105,14 +105,14 @@ $resultUploads = mysqli_stmt_get_result($stmt);
                           // Check and display each description if not null
                           if ($rowUploads["hatDESC"] !== null) echo '<p>'.$rowUploads["hatDESC"].'</p>';
                           if ($rowUploads["shirtDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["sweaterDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["jacketDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["pantsDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["shortsDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["glovesDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["shoesDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["socksDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                         if ($rowUploads["accessoryDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
+                         if ($rowUploads["sweaterDESC"] !== null) echo '<p>'.$rowUploads["sweaterDESC"].'</p>';
+                         if ($rowUploads["jacketDESC"] !== null) echo '<p>'.$rowUploads["jacketDESC"].'</p>';
+                         if ($rowUploads["pantsDESC"] !== null) echo '<p>'.$rowUploads["pantsDESC"].'</p>';
+                         if ($rowUploads["shortsDESC"] !== null) echo '<p>'.$rowUploads["shortsDESC"].'</p>';
+                         if ($rowUploads["glovesDESC"] !== null) echo '<p>'.$rowUploads["glovesDESC"].'</p>';
+                         if ($rowUploads["shoesDESC"] !== null) echo '<p>'.$rowUploads["shoesDESC"].'</p>';
+                         if ($rowUploads["socksDESC"] !== null) echo '<p>'.$rowUploads["socksDESC"].'</p>';
+                         if ($rowUploads["accessoryDESC"] !== null) echo '<p>'.$rowUploads["accessoryDESC"].'</p>';
                           // Add similar checks for other description fields
 
                           echo '</div>
