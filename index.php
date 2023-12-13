@@ -18,6 +18,8 @@
     }
 
     .gallery-container a {
+        border-radius: 25px;
+  border: 2px solid #73AD21;
       flex: 0 0 48%;
       margin-bottom: 20px;
       text-decoration: none;
