@@ -46,7 +46,7 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+
       overflow: auto;
       color: #333;
       background-color: #99ccff;
