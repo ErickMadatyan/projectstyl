@@ -2,71 +2,55 @@
 include 'header.php';
 require_once 'dbh.inc.php';
 ?>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+ <style>
+   .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-    .gallery-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
+  .gallery-container a {
+    flex: 0 0 48%; /* Adjust the flex-basis as needed */
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row; /* Display image and text side by side */
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .gallery-container a {
-        border-radius: 25px;
-  border: 2px solid #73AD21;
-      flex: 0 0 48%;
-      margin-bottom: 20px;
-      text-decoration: none;
-      display: flex;
-      flex-direction: row;
-      border: 1px solid #ddd;
-      transition: transform 0.3s ease-in-out;
-      overflow: hidden;
-    }
+  .gallery-container a:hover {
+    transform: scale(1.05);
+  }
 
-    .gallery-container a:hover {
-      transform: scale(1.05);
-    }
+  .gallery-container a div {
+    width: 60%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+  }
 
-    .gallery-container a .gallery-image {
-      width: 60%;
-      height: 500px;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #99ccff;
-    }
+  .gallery-container a .item-descriptions {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+  }
 
-    .gallery-container a .item-descriptions {
-      width: 40%;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
+  .gallery-container a h3 {
+    font-size: 1.5em;
+    margin-top: 0; /* Ensure h3 starts at the top */
+    margin-bottom: 10px;
+  }
 
-      overflow: auto;
-      color: #333;
-      background-color: #99ccff;
-    }
-
-    .gallery-container a h3 {
-      font-size: 1.8em;
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #007BFF;
-    }
-
-    .gallery-container a p {
-      margin: 5px 0;
-      font-size: 1em;
-      line-height: 1.4;
-    }
-  </style>
+  .gallery-container a p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+</style>
 
 <!------------ CONTENT ------------->
 <body>
