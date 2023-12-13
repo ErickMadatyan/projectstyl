@@ -101,7 +101,7 @@ require_once 'dbh.inc.php';
                   // Display user's uploads
                   echo "<h3>Your Uploads:</h3>";
 
-                  echo "</div></div>";
+
 
                   $sqlUploads = "SELECT * FROM gallery WHERE usersName = ? ORDER BY orderGallery DESC";
                   $stmt = mysqli_prepare($conn, $sqlUploads);
@@ -128,8 +128,10 @@ require_once 'dbh.inc.php';
 
     echo '</div>
             </a>';
+                        
 }
                       echo "</div>";
+                                      echo "</div></div>";
                   } else {
                       echo "<p>Error fetching user uploads: " . mysqli_error($conn) . "</p>";
                   }
