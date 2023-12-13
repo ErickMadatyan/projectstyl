@@ -93,7 +93,7 @@ mysqli_stmt_bind_param($stmt, "s", $uid);
 mysqli_stmt_execute($stmt);
 $resultUploads = mysqli_stmt_get_result($stmt);
 
-                  if ($resultUploads) {
+                     if ($resultUploads) {
                       echo "<div class='gallery-container'>";
                       while ($rowUploads = mysqli_fetch_assoc($resultUploads)) {
                           // Display each image upload
@@ -102,18 +102,24 @@ $resultUploads = mysqli_stmt_get_result($stmt);
                                   <div class="item-descriptions">
                                       <h3>'.$rowUploads["imageTitle"].'</h3>';
 
-                          // Check and display each description if not null
-                            if ($rowUploads["hatDESC"] !== '' && $rowUploads["hatDESC"] !== null) echo '<p>'.$rowUploads["hatDESC"].'</p>';
-                          if ($rowUploads["shirtDESC"] !== '' && $rowUploads["shirtDESC"] !== null) echo '<p>'.$rowUploads["shirtDESC"].'</p>';
-                          if ($rowUploads["sweaterDESC"] !== '' && $rowUploads["sweaterDESC"] !== null) echo '<p>'.$rowUploads["sweaterDESC"].'</p>';
-                          if ($rowUploads["jacketDESC"] !== '' && $rowUploads["jacketDESC"] !== null) echo '<p>'.$rowUploads["jacketDESC"].'</p>';
-                          if ($rowUploads["pantsDESC"] !== '' && $rowUploads["pantsDESC"] !== null) echo '<p>'.$rowUploads["pantsDESC"].'</p>';
-                          if ($rowUploads["shortsDESC"] !== '' && $rowUploads["shortsDESC"] !== null) echo '<p>'.$rowUploads["shortsDESC"].'</p>';
-                          if ($rowUploads["glovesDESC"] !== '' && $rowUploads["glovesDESC"] !== null) echo '<p>'.$rowUploads["glovesDESC"].'</p>';
-                          if ($rowUploads["shoesDESC"] !== '' && $rowUploads["shoesDESC"] !== null) echo '<p>'.$rowUploads["shoesDESC"].'</p>';
-                          if ($rowUploads["socksDESC"] !== '' && $rowUploads["socksDESC"] !== null) echo '<p>'.$rowUploads["socksDESC"].'</p>';
-                          if ($rowUploads["accessoryDESC"] !== '' && $rowUploads["accessoryDESC"] !== null) echo '<p>'.$rowUploads["accessoryDESC"].'</p>';
-                          // Add similar checks for other description fields
+                          // Helper function to display a description if not empty or null
+                          function displayDescription($desc) {
+                              if ($desc !== '' && $desc !== null) {
+                                  echo '<p>'.$desc.'</p>';
+                              }
+                          }
+
+                          // Display each description using the helper function
+                          displayDescription($rowUploads["hatDESC"]);
+                          displayDescription($rowUploads["shirtDESC"]);
+                          displayDescription($rowUploads["sweaterDESC"]);
+                          displayDescription($rowUploads["jacketDESC"]);
+                          displayDescription($rowUploads["pantsDESC"]);
+                          displayDescription($rowUploads["shortsDESC"]);
+                          displayDescription($rowUploads["glovesDESC"]);
+                          displayDescription($rowUploads["shoesDESC"]);
+                          displayDescription($rowUploads["socksDESC"]);
+                          displayDescription($rowUploads["accessoryDESC"]);
 
                           echo '</div>
                                 </a>';
