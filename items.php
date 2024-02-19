@@ -35,11 +35,9 @@
         .image-container {
             position: relative;
             margin-bottom: 20px;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
+            width: 400px; /* Set the width of the container */
+            height: 300px; /* Set the height of the container */
+            overflow: hidden; /* Hide overflowing content */
             border-radius: 5px;
         }
 
@@ -53,6 +51,8 @@
             border-radius: 5px;
             opacity: 0;
             transition: opacity 0.3s ease;
+            background-size: cover; /* Cover the entire box */
+            background-position: center; /* Center the background image */
         }
 
         .image-container:hover .blue-box {
@@ -92,8 +92,7 @@
 
               while($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="image-container">';
-                echo '<img src="imgs/'.$row["imgFullNameGallery"].'" alt="'.$row["imageTitle"].'">';
-                echo '<div class="blue-box">';
+                echo '<div class="blue-box" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');">';
                 echo '<div class="item-descriptions">';
                 echo '<h3>'.$row["imageTitle"].'</h3>';
 
@@ -114,6 +113,7 @@
     </div>
 </body>
 </html>
+
 
 
 
