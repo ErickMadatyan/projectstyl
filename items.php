@@ -49,22 +49,19 @@
             bottom: 0;
             border: 2px solid #3498db;
             border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
             background-size: cover; /* Cover the entire box */
             background-position: center; /* Center the background image */
         }
 
-        .image-container:hover .blue-box {
-            opacity: 1;
-        }
-
         .item-descriptions {
-            margin-top: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 10px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
             border: 2px solid #3498db;
-            border-radius: 5px;
+            border-radius: 0 0 5px 5px;
         }
 
         .item-descriptions p {
@@ -92,7 +89,7 @@
 
               while($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="image-container">';
-                echo '<div class="blue-box" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');">';
+                echo '<div class="blue-box" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>';
                 echo '<div class="item-descriptions">';
                 echo '<h3>'.$row["imageTitle"].'</h3>';
 
@@ -104,7 +101,6 @@
                   }
                 }
 
-                echo '</div>';
                 echo '</div>';
                 echo '</div>';
               }
