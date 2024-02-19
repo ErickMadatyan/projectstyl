@@ -1,11 +1,14 @@
 <?php
-$serverName = "localhost";
-$dBUsername = "root";
+$serverName = "db2102024.cr6vvrkufa98.us-east-2.rds.amazonaws.com";
+$dBUsername = "admin";
 $dbPassword = "Dark30death";
 $dBName = "projectstyldb";
+$port = 3306; // Default port for MySQL
 
-$conn = mysqli_connect($serverName, $dBUsername, $dbPassword, $dBName);
+// Create connection
+$conn = new mysqli($serverName, $dBUsername, $dbPassword, $dBName, $port);
 
-if(!$conn){
-    die("Connection Failed: " . mysqli_connect_error());
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
