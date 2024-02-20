@@ -47,9 +47,9 @@
         }
 
         .image-display img {
-            width: 100%; /* Resize image to fit inside the box */
-            height: auto;
-            display: block;
+            width: auto; /* Resize image to fit inside the box */
+            height: 100%;
+            display: center;
         }
 
         .image-display .item-descriptions {
