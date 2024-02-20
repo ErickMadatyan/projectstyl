@@ -101,6 +101,10 @@
             transition: opacity 0.3s ease;
         }
 
+        .image-display .item-descriptions:hover {
+            opacity: 1; /* Show on hover */
+        }
+
         .image-display .item-descriptions h3 {
             margin-top: 0; /* Remove default margin */
         }
