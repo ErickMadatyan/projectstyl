@@ -119,6 +119,21 @@
         .image-display .item-descriptions p strong {
             font-weight: bold;
         }
+
+        /* Style for the vote buttons */
+        .image-display form button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .image-display form button:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -151,6 +166,7 @@
     </div> <!-- image-display -->
 </body>
 </html>
+
 <?php
       }
     }
