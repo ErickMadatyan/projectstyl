@@ -4,6 +4,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@
 
         .container {
             background-color: #e0e0f0;
-            padding: 20px;
+            padding: 40px; /* Increased padding */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -34,11 +35,11 @@
 
         .image-container {
             position: relative;
-            margin-bottom: 20px;
-            width: 400px; /* Set the width of the container */
-            height: 300px; /* Set the height of the container */
-            overflow: hidden; /* Hide overflowing content */
-            border-radius: 5px;
+            margin-bottom: 40px; /* Increased margin */
+            width: 500px; /* Increased width */
+            height: 400px; /* Increased height */
+            overflow: hidden;
+            border-radius: 10px; /* Increased border-radius */
         }
 
         .blue-box {
@@ -48,9 +49,18 @@
             right: 0;
             bottom: 0;
             border: 2px solid #3498db;
-            border-radius: 5px;
-            background-size: cover; /* Cover the entire box */
-            background-position: center; /* Center the background image */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .blue-box:hover .item-descriptions { /* Hover effect only for text */
+            opacity: 1;
+        }
+
+        img {
+            width: 100%; /* Resize image to fit inside the box */
+            height: auto;
+            display: block;
         }
 
         .item-descriptions {
@@ -58,10 +68,17 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
             border: 2px solid #3498db;
-            border-radius: 0 0 5px 5px;
+            border-top: none; /* Remove top border to blend with image */
+            border-radius: 0 0 10px 10px;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease;
+        }
+
+        .item-descriptions h3 {
+            margin-top: 0; /* Remove default margin */
         }
 
         .item-descriptions p {
@@ -89,7 +106,8 @@
 
               while($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="image-container">';
-                echo '<div class="blue-box" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>';
+                echo '<div class="blue-box">';
+                echo '<img src="imgs/'.$row["imgFullNameGallery"].'" alt="'.$row["imageTitle"].'">';
                 echo '<div class="item-descriptions">';
                 echo '<h3>'.$row["imageTitle"].'</h3>';
 
@@ -101,18 +119,15 @@
                   }
                 }
 
-                echo '</div>';
-                echo '</div>';
+                echo '</div>'; // item-descriptions
+                echo '</div>'; // blue-box
+                echo '</div>'; // image-container
               }
             }
         ?>
     </div>
 </body>
 </html>
-
-
-
-
 
 
 
