@@ -156,14 +156,22 @@
                     </div> <!-- item-descriptions -->
                 </div> <!-- blue-box -->
             </div> <!-- image-container -->
-            <form method="POST" action="">
+            <form id="voteForm" method="POST" action="">
               <input type="hidden" name="galleryid" value="<?php echo $row["idGallery"]; ?>">
-              <button type="submit" name="vote" value="upvote">Upvote</button>
-              <button type="submit" name="vote" value="downvote">Downvote</button>
+              <button type="button" onclick="vote('upvote')" id="upvoteBtn">Upvote</button>
+              <button type="button" onclick="vote('downvote')" id="downvoteBtn">Downvote</button>
             </form>
             <p>Votes: <?php echo $row["votes"]; ?></p>
         </div> <!-- container -->
     </div> <!-- image-display -->
+    
+    <script>
+        function vote(type) {
+            document.getElementById("voteForm").submit(); // Submit the form
+            document.getElementById("upvoteBtn").disabled = true; // Disable upvote button
+            document.getElementById("downvoteBtn").disabled = true; // Disable downvote button
+        }
+    </script>
 </body>
 </html>
 
