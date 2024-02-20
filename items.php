@@ -5,6 +5,22 @@
   // Establish database connection
   include_once 'dbh.inc.php';
 
+  // Handle voting functionality
+  if(isset($_GET["galleryid"]) && isset($_GET["vote"])) {
+    $galleryid = $_GET["galleryid"];
+    $vote = $_GET["vote"]; // Assuming vote can be either 1 (upvote) or -1 (downvote)
+
+    // Update the votes in the database
+    $sql = "UPDATE gallery SET votes = votes + ? WHERE idGallery = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      echo "SQL STATEMENT FAILED!";
+    } else {
+      mysqli_stmt_bind_param($stmt, "ii", $vote, $galleryid);
+      mysqli_stmt_execute($stmt);
+    }
+  }
+
   // Fetch gallery entry based on galleryid if provided
   if(isset($_GET["galleryid"])) {
     $galleryid = $_GET["galleryid"];
@@ -103,23 +119,20 @@
 <body>
     <div class="image-display">
         <div class="container">
+            <!-- Display the image and its details -->
             <div class="image-container">
-                <div class="blue-box">
-                    <img src="imgs/<?php echo $row["imgFullNameGallery"]; ?>" alt="<?php echo $row["imageTitle"]; ?>">
-                    <div class="item-descriptions">
-                        <h3><?php echo $row["imageTitle"]; ?></h3>
-                        <?php
-                          // Check and display each item description
-                          $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
-                          foreach ($items as $item) {
-                            if (!empty($row[$item . "DESC"])) {
-                              echo '<p><strong>' . ucfirst($item) . ':</strong> ' . $row[$item . "DESC"] . '</p>';
-                            }
-                          }
-                        ?>
-                    </div> <!-- item-descriptions -->
-                </div> <!-- blue-box -->
+                <img src="imgs/<?php echo $row["imgFullNameGallery"]; ?>" alt="<?php echo $row["imageTitle"]; ?>">
+                <div class="item-descriptions">
+                    <h3><?php echo $row["imageTitle"]; ?></h3>
+                    <!-- Display other details here -->
+                </div> <!-- item-descriptions -->
             </div> <!-- image-container -->
+
+            <!-- Voting buttons -->
+            <div class="voting-buttons">
+                <a href="image_display.php?galleryid=<?php echo $galleryid; ?>&vote=1">Upvote</a>
+                <a href="image_display.php?galleryid=<?php echo $galleryid; ?>&vote=-1">Downvote</a>
+            </div>
         </div> <!-- container -->
     </div> <!-- image-display -->
 </body>
