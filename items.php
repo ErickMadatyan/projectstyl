@@ -207,7 +207,7 @@
                 </div> <!-- blue-box -->
             </div> <!-- image-container -->
             <div class="voting-buttons">
-                <img src="https://www.flaticon.com/svg/static/icons/svg/926/926580.svg" alt="Thumbs Up">
+                <img src="https://as1.ftcdn.net/v2/jpg/05/10/38/16/1000_F_510381696_jhNwqjLI2W2KDDQVyrEtY9Cucq3ahZhg.jpg" alt="Thumbs Up">
                 <img src="thumbs-down-placeholder.png" alt="Thumbs Down">
             </div>
             <form method="POST" action="">
