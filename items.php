@@ -24,6 +24,8 @@
       mysqli_stmt_bind_param($stmt, "i", $galleryid);
       mysqli_stmt_execute($stmt);
     }
+    // Set a cookie to prevent multiple votes
+    setcookie("voted_" . $galleryid, true, time() + (86400 * 30), "/"); // 86400 = 1 day
   }
 
   // Fetch gallery entry based on galleryid if provided
@@ -134,6 +136,11 @@
         .image-display form button:hover {
             background-color: #2980b9;
         }
+
+        .image-display form button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -158,8 +165,19 @@
             </div> <!-- image-container -->
             <form id="voteForm" method="POST" action="">
               <input type="hidden" name="galleryid" value="<?php echo $row["idGallery"]; ?>">
-              <button type="button" onclick="vote('upvote')" id="upvoteBtn">Upvote</button>
-              <button type="button" onclick="vote('downvote')" id="downvoteBtn">Downvote</button>
+              <?php 
+                // Check if the user has voted before
+                $voted = false;
+                if(isset($_COOKIE["voted_" . $row["idGallery"]])) {
+                    $voted = true;
+                }
+                if(!$voted) {
+                    echo '<button type="button" onclick="vote(\'upvote\')" id="upvoteBtn">Upvote</button>';
+                    echo '<button type="button" onclick="vote(\'downvote\')" id="downvoteBtn">Downvote</button>';
+                } else {
+                    echo '<p>You have already voted</p>';
+                }
+              ?>
             </form>
             <p>Votes: <?php echo $row["votes"]; ?></p>
         </div> <!-- container -->
@@ -168,8 +186,11 @@
     <script>
         function vote(type) {
             var form = document.getElementById("voteForm");
-            var voteInput = document.getElementById("vote");
-            voteInput.value = type; // Set the value of the hidden input
+            var voteInput = document.createElement("input");
+            voteInput.setAttribute("type", "hidden");
+            voteInput.setAttribute("name", "vote");
+            voteInput.setAttribute("value", type);
+            form.appendChild(voteInput);
             form.submit();
             form.reset(); // Reset the form after submission
             document.getElementById("upvoteBtn").disabled = true; // Disable upvote button
@@ -178,7 +199,6 @@
     </script>
 </body>
 </html>
-
 <?php
       }
     }
