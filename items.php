@@ -130,8 +130,8 @@
 
             <!-- Voting buttons -->
             <div class="voting-buttons">
-                <a href="image_display.php?galleryid=<?php echo $galleryid; ?>&vote=1">Upvote</a>
-                <a href="image_display.php?galleryid=<?php echo $galleryid; ?>&vote=-1">Downvote</a>
+                <a href="items.php?galleryid=<?php echo $galleryid; ?>&vote=1">Upvote</a>
+                <a href="items.php?galleryid=<?php echo $galleryid; ?>&vote=-1">Downvote</a>
             </div>
         </div> <!-- container -->
     </div> <!-- image-display -->
