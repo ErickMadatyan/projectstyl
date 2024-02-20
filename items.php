@@ -126,10 +126,29 @@
 
 
 
+<?php
+  if(isset($_GET["galleryid"])) {
+    $galleryid = $_GET["galleryid"];
 
+    // Fetch gallery entry based on galleryid
+    $sql = "SELECT * FROM gallery WHERE idGallery = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      echo "SQL STATEMENT FAILED!";
+    } else {
+      mysqli_stmt_bind_param($stmt, "i", $galleryid);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
 
-
-
+      // Display the fetched gallery entry
+      while($row = mysqli_fetch_assoc($result)) {
+        // Your code to display the gallery entry
+      }
+    }
+  } else {
+    echo "Gallery ID not provided!";
+  }
+?>
 
 <?php
   include 'footer.php';
