@@ -60,7 +60,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
         }
 
         .image-display .image-container {
@@ -120,73 +119,9 @@
         .image-display .item-descriptions p strong {
             font-weight: bold;
         }
-
-        .image-display .voting-buttons {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-        }
-
-        .image-display .voting-buttons img {
-            width: 30px; /* Adjust size as needed */
-            height: auto;
-            margin-right: 10px; /* Adjust spacing between images */
-        }
-
-        /* Hide default button appearance */
-        .image-display button {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <?php
-      // Include header with navigation bar
-      include 'header.php';
-
-      // Establish database connection
-      include_once 'dbh.inc.php';
-
-      // Handle upvote or downvote action
-      if(isset($_POST["vote"]) && isset($_POST["galleryid"])) {
-        $vote = $_POST["vote"];
-        $galleryid = $_POST["galleryid"];
-
-        // Update the votes count in the gallery table
-        $sql = "";
-        if ($vote == "upvote") {
-          $sql = "UPDATE gallery SET votes = votes + 1 WHERE idGallery = ?";
-        } elseif ($vote == "downvote") {
-          $sql = "UPDATE gallery SET votes = votes - 1 WHERE idGallery = ?";
-        }
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-          echo "SQL STATEMENT FAILED!";
-        } else {
-          mysqli_stmt_bind_param($stmt, "i", $galleryid);
-          mysqli_stmt_execute($stmt);
-        }
-      }
-
-      // Fetch gallery entry based on galleryid if provided
-      if(isset($_GET["galleryid"])) {
-        $galleryid = $_GET["galleryid"];
-
-        // Fetch gallery entry based on galleryid
-        $sql = "SELECT * FROM gallery WHERE idGallery = ?";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-          echo "SQL STATEMENT FAILED!";
-        } else {
-          mysqli_stmt_bind_param($stmt, "i", $galleryid);
-          mysqli_stmt_execute($stmt);
-          $result = mysqli_stmt_get_result($stmt);
-
-          // Display the fetched gallery entry
-          while($row = mysqli_fetch_assoc($result)) {
-            // Display the gallery entry using HTML
-    ?>
     <div class="image-display">
         <div class="container">
             <div class="image-container">
@@ -206,32 +141,16 @@
                     </div> <!-- item-descriptions -->
                 </div> <!-- blue-box -->
             </div> <!-- image-container -->
-            <div class="voting-buttons">
-                <img src="https://as1.ftcdn.net/v2/jpg/05/10/38/16/1000_F_510381696_jhNwqjLI2W2KDDQVyrEtY9Cucq3ahZhg.jpg" alt="Thumbs Up">
-                <img src="thumbs-down-placeholder.png" alt="Thumbs Down">
-            </div>
             <form method="POST" action="">
               <input type="hidden" name="galleryid" value="<?php echo $row["idGallery"]; ?>">
-              <button type="submit" name="vote" value="upvote" style="display: none;">Upvote</button>
-              <button type="submit" name="vote" value="downvote" style="display: none;">Downvote</button>
+              <button type="submit" name="vote" value="upvote">Upvote</button>
+              <button type="submit" name="vote" value="downvote">Downvote</button>
             </form>
             <p>Votes: <?php echo $row["votes"]; ?></p>
         </div> <!-- container -->
     </div> <!-- image-display -->
-    <?php
-          }
-        }
-      } else {
-        // If galleryid is not provided in the URL
-        echo "Gallery ID not provided!";
-      }
-
-      // Include footer
-      include 'footer.php';
-    ?>
 </body>
 </html>
-
 <?php
       }
     }
