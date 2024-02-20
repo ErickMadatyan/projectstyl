@@ -1,10 +1,28 @@
 <?php
+  // Include header with navigation bar
   include 'header.php';
+
+  // Establish database connection
+  include_once 'dbh.inc.php';
+
+  // Fetch gallery entry based on galleryid if provided
+  if(isset($_GET["galleryid"])) {
+    $galleryid = $_GET["galleryid"];
+
+    // Fetch gallery entry based on galleryid
+    $sql = "SELECT * FROM gallery WHERE idGallery = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      echo "SQL STATEMENT FAILED!";
+    } else {
+      mysqli_stmt_bind_param($stmt, "i", $galleryid);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      // Display the fetched gallery entry
+      while($row = mysqli_fetch_assoc($result)) {
+        // Display the gallery entry using HTML
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Display Page</title>
     <style>
+        /* Your CSS styles for image display here */
         .image-display .container {
             background-color: #e0e0f0;
             padding: 40px; /* Increased padding */
@@ -84,72 +103,35 @@
 <body>
     <div class="image-display">
         <div class="container">
-            <?php
-                include_once 'dbh.inc.php';
-                $sql = "SELECT * FROM gallery";
-                $stmt = mysqli_stmt_init($conn);
-                if (!mysqli_stmt_prepare($stmt, $sql)) {
-                  echo "SQL STATEMENT FAILED!";
-                } else {
-                  mysqli_stmt_execute($stmt);
-                  $result = mysqli_stmt_get_result($stmt);
-
-                  while($row = mysqli_fetch_assoc($result)) {
-                    echo '<div class="image-container">';
-                    echo '<div class="blue-box">';
-                    echo '<img src="imgs/'.$row["imgFullNameGallery"].'" alt="'.$row["imageTitle"].'">';
-                    echo '<div class="item-descriptions">';
-                    echo '<h3>'.$row["imageTitle"].'</h3>';
-
-                    // Check and display each item description
-                    $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
-                    foreach ($items as $item) {
-                      if (!empty($row[$item . "DESC"])) {
-                        echo '<p><strong>' . ucfirst($item) . ':</strong> '.$row[$item . "DESC"].'</p>';
-                      }
-                    }
-
-                    echo '</div>'; // item-descriptions
-                    echo '</div>'; // blue-box
-                    echo '</div>'; // image-container
-                  }
-                }
-            ?>
-        </div>
-    </div>
+            <div class="image-container">
+                <div class="blue-box">
+                    <img src="imgs/<?php echo $row["imgFullNameGallery"]; ?>" alt="<?php echo $row["imageTitle"]; ?>">
+                    <div class="item-descriptions">
+                        <h3><?php echo $row["imageTitle"]; ?></h3>
+                        <?php
+                          // Check and display each item description
+                          $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
+                          foreach ($items as $item) {
+                            if (!empty($row[$item . "DESC"])) {
+                              echo '<p><strong>' . ucfirst($item) . ':</strong> ' . $row[$item . "DESC"] . '</p>';
+                            }
+                          }
+                        ?>
+                    </div> <!-- item-descriptions -->
+                </div> <!-- blue-box -->
+            </div> <!-- image-container -->
+        </div> <!-- container -->
+    </div> <!-- image-display -->
 </body>
 </html>
-
-
-
-
-
-
-
 <?php
-  if(isset($_GET["galleryid"])) {
-    $galleryid = $_GET["galleryid"];
-
-    // Fetch gallery entry based on galleryid
-    $sql = "SELECT * FROM gallery WHERE idGallery = ?";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-      echo "SQL STATEMENT FAILED!";
-    } else {
-      mysqli_stmt_bind_param($stmt, "i", $galleryid);
-      mysqli_stmt_execute($stmt);
-      $result = mysqli_stmt_get_result($stmt);
-
-      // Display the fetched gallery entry
-      while($row = mysqli_fetch_assoc($result)) {
-        // Your code to display the gallery entry
       }
     }
   } else {
+    // If galleryid is not provided in the URL
     echo "Gallery ID not provided!";
   }
-?>
 
-<?php
+  // Include footer
   include 'footer.php';
 ?>
