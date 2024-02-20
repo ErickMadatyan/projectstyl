@@ -167,9 +167,17 @@
     
     <script>
         function vote(type) {
-            document.getElementById("voteForm").submit(); // Submit the form
-            document.getElementById("upvoteBtn").disabled = true; // Disable upvote button
-            document.getElementById("downvoteBtn").disabled = true; // Disable downvote button
+            var form = document.getElementById("voteForm");
+            var voteInput = document.createElement("input");
+            voteInput.setAttribute("type", "hidden");
+            voteInput.setAttribute("name", "vote");
+            voteInput.setAttribute("value", type);
+            form.appendChild(voteInput);
+            form.submit();
+            document.getElementById("voteForm").reset(); // Reset the form after submission
+            document.getElementById("voteForm").querySelectorAll("button").forEach(function(button) {
+                button.disabled = true; // Disable all buttons after submission
+            });
         }
     </script>
 </body>
