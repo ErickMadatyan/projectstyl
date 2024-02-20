@@ -168,16 +168,12 @@
     <script>
         function vote(type) {
             var form = document.getElementById("voteForm");
-            var voteInput = document.createElement("input");
-            voteInput.setAttribute("type", "hidden");
-            voteInput.setAttribute("name", "vote");
-            voteInput.setAttribute("value", type);
-            form.appendChild(voteInput);
+            var voteInput = document.getElementById("vote");
+            voteInput.value = type; // Set the value of the hidden input
             form.submit();
-            document.getElementById("voteForm").reset(); // Reset the form after submission
-            document.getElementById("voteForm").querySelectorAll("button").forEach(function(button) {
-                button.disabled = true; // Disable all buttons after submission
-            });
+            form.reset(); // Reset the form after submission
+            document.getElementById("upvoteBtn").disabled = true; // Disable upvote button
+            document.getElementById("downvoteBtn").disabled = true; // Disable downvote button
         }
     </script>
 </body>
