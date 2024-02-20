@@ -114,6 +114,27 @@
         .image-display .item-descriptions p strong {
             font-weight: bold;
         }
+
+        .image-display .vote-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .image-display .vote-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 0 5px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .image-display .vote-btn:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -129,9 +150,9 @@
             </div> <!-- image-container -->
 
             <!-- Voting buttons -->
-            <div class="voting-buttons">
-                <a href="items.php?galleryid=<?php echo $galleryid; ?>&vote=1">Upvote</a>
-                <a href="items.php?galleryid=<?php echo $galleryid; ?>&vote=-1">Downvote</a>
+            <div class="vote-buttons">
+                <a class="vote-btn" href="items.php?galleryid=<?php echo $galleryid; ?>&vote=1">Upvote</a>
+                <a class="vote-btn" href="items.php?galleryid=<?php echo $galleryid; ?>&vote=-1">Downvote</a>
             </div>
         </div> <!-- container -->
     </div> <!-- image-display -->
