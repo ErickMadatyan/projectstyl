@@ -116,10 +116,10 @@
               $result = mysqli_stmt_get_result($stmt);
 
               while($row = mysqli_fetch_assoc($result)) {
-                echo '<a href="#">
-                        <div class="gallery-image" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>
-                        <div class="item-descriptions">
-                            <h3>'.$row["imageTitle"].'</h3>';
+                echo '<a href="image_display.php?galleryid='.$row["idGallery"].'">'; // Include galleryid as query parameter
+                echo '<div class="gallery-image" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>
+                      <div class="item-descriptions">
+                      <h3>'.$row["imageTitle"].'</h3>';
 
                 // Check and display each item description
                 $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
