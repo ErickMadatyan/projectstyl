@@ -69,6 +69,8 @@
             height: 400px; /* Increased height */
             overflow: hidden;
             border-radius: 10px; /* Increased border-radius */
+            display: flex; /* Added display flex */
+            align-items: center; /* Center align items */
         }
 
         .image-display .blue-box {
@@ -94,16 +96,15 @@
 
         .image-display .item-descriptions {
             position: absolute;
-            bottom: 0;
+            top: 0; /* Changed position */
             left: 0;
             right: 0;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border: 2px solid #3498db;
-            border-top: none; /* Remove top border to blend with image */
-            border-radius: 0 0 10px 10px;
-            opacity: 0; /* Hidden by default */
-            transition: opacity 0.3s ease;
+            border-bottom: none; /* Remove bottom border */
+            border-radius: 10px 10px 0 0; /* Adjust border radius */
+            opacity: 1;
         }
 
         .image-display .item-descriptions h3 {
@@ -119,6 +120,10 @@
         .image-display .item-descriptions p strong {
             font-weight: bold;
         }
+
+        .image-display .vote-buttons {
+            margin-left: 10px; /* Adjusted margin */
+        }
     </style>
 </head>
 <body>
@@ -128,6 +133,7 @@
                 <div class="blue-box">
                     <img src="imgs/<?php echo $row["imgFullNameGallery"]; ?>" alt="<?php echo $row["imageTitle"]; ?>">
                     <div class="item-descriptions">
+                        <p>Votes: <?php echo $row["votes"]; ?></p> <!-- Move vote count to top -->
                         <h3><?php echo $row["imageTitle"]; ?></h3>
                         <?php
                           // Check and display each item description
@@ -143,10 +149,12 @@
             </div> <!-- image-container -->
             <form method="POST" action="">
               <input type="hidden" name="galleryid" value="<?php echo $row["idGallery"]; ?>">
-              <button type="submit" name="vote" value="upvote">Upvote</button>
-              <button type="submit" name="vote" value="downvote">Downvote</button>
+              <div class="vote-buttons">
+                <!-- Placeholder for thumbs up and down images -->
+                <button type="submit" name="vote" value="upvote">Thumbs Up</button>
+                <button type="submit" name="vote" value="downvote">Thumbs Down</button>
+              </div>
             </form>
-            <p>Votes: <?php echo $row["votes"]; ?></p>
         </div> <!-- container -->
     </div> <!-- image-display -->
 </body>
