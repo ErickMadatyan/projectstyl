@@ -102,7 +102,7 @@ function createUser($conn, $name, $email, $username, $pwd) {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Account Activation';
-    $mail->Body    = 'Please Activate Your Account:</br> <a href="http://projectstyl.com/token.php?token='.$verification_code.'</a></p>';
+    $mail->Body    = 'Please Activate Your Account:</br> <a href="https://projectstyl.com/token.php?token='.$verification_code.'</a></p>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
