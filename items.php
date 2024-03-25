@@ -6,31 +6,39 @@
   include_once 'dbh.inc.php';
 
   // Handle upvote or downvote action
-  if(isset($_POST["vote"]) && isset($_POST["galleryid"])) {
-    $vote = $_POST["vote"];
-    $galleryid = $_POST["galleryid"];
-
-    // Update the votes count in the gallery table
-    $sql = "";
-    if ($vote == "upvote") {
-      $sql = "UPDATE gallery SET votes = votes + 1 WHERE idGallery = ?";
-    } elseif ($vote == "downvote") {
-      $sql = "UPDATE gallery SET votes = votes - 1 WHERE idGallery = ?";
-    }
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-      echo "SQL STATEMENT FAILED!";
-    } else {
-      mysqli_stmt_bind_param($stmt, "i", $galleryid);
-      mysqli_stmt_execute($stmt);
-    }
-    // Set a cookie to prevent multiple votes
-    setcookie("voted_" . $galleryid, true, time() + (86400 * 30), "/"); // 86400 = 1 day
-  
-    // Reload the page after 1 second (1000 milliseconds)
-echo '<script>window.location.href = "index.php";</script>';
-    exit(); // Stop further execution of PHP script
+if(isset($_POST["vote"]) && isset($_POST["galleryid"])) {
+  // Check if user is signed in
+  session_start();
+  if(!isset($_SESSION['userid'])) {
+    // User is not signed in, you can redirect them to a login page or display a message
+    echo "Please sign in to vote!";
+    exit(); // Stop further execution
   }
+
+  $vote = $_POST["vote"];
+  $galleryid = $_POST["galleryid"];
+
+  // Update the votes count in the gallery table
+  $sql = "";
+  if ($vote == "upvote") {
+    $sql = "UPDATE gallery SET votes = votes + 1 WHERE idGallery = ?";
+  } elseif ($vote == "downvote") {
+    $sql = "UPDATE gallery SET votes = votes - 1 WHERE idGallery = ?";
+  }
+  $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    echo "SQL STATEMENT FAILED!";
+  } else {
+    mysqli_stmt_bind_param($stmt, "i", $galleryid);
+    mysqli_stmt_execute($stmt);
+  }
+  // Set a cookie to prevent multiple votes
+  setcookie("voted_" . $galleryid, true, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+  // Redirect to index page after vote
+  echo '<script>window.location.href = "index.php";</script>';
+  exit(); // Stop further execution of PHP script
+}
   // Fetch gallery entry based on galleryid if provided
   if(isset($_GET["galleryid"])) {
     $galleryid = $_GET["galleryid"];
