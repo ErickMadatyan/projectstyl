@@ -177,7 +177,7 @@
                 } else {
                     echo '<p>You have already voted</p>';
                     // Disable the buttons if user has already voted
-                    echo '<script>document.getElementById("upvoteBtn").disabled =
+
 <?php 
                     echo '<script>document.getElementById("upvoteBtn").disabled = true;</script>';
                     echo '<script>document.getElementById("downvoteBtn").disabled = true;</script>';
