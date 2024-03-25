@@ -455,3 +455,6 @@ footer{
 .cases-links .gallery-container a p {
   margin: 10px 0;
 }
+.center-upload {
+	text-align: center;
+}
