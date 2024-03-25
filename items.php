@@ -28,8 +28,8 @@
     setcookie("voted_" . $galleryid, true, time() + (86400 * 30), "/"); // 86400 = 1 day
   
     // Reload the page after 1 second (1000 milliseconds)
-    echo '<script>setTimeout(function(){ location.reload(); }, 1000);</script>';
-    exit();
+echo '<script>window.location.href = "index.php";</script>';
+    exit(); // Stop further execution of PHP script
   }
   // Fetch gallery entry based on galleryid if provided
   if(isset($_GET["galleryid"])) {
