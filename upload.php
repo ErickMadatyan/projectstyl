@@ -59,7 +59,7 @@ Select an image
       </div>
     </div>
 <?php } else {
-	echo "Please log in to upload images.";
+	echo '<div class="center-upload">Please log in to upload images.</div>';
 	}
 ?>
 
