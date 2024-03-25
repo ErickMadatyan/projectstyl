@@ -11,7 +11,7 @@ if(isset($_POST["vote"]) && isset($_POST["galleryid"])) {
   session_start();
   if(!isset($_SESSION['userid'])) {
     // User is not signed in, you can redirect them to a login page or display a message
-    echo "Please sign in to vote!";
+    echo '<div class="center-upload">Please Sign In to Vote.</div>';
     exit(); // Stop further execution
   }
 
