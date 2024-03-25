@@ -20,7 +20,7 @@ if (isset($_SESSION['userid'])) {
 
 
 <?php } else {
-	echo "Please log in to upload images.";
+	echo '<div class="center-upload">You are not logged in.</div>';
 	}
 ?>
 
