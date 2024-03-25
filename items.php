@@ -29,6 +29,7 @@
   
     // Reload the page after 1 second (1000 milliseconds)
     echo '<script>setTimeout(function(){ location.reload(); }, 1000);</script>';
+    exit();
   }
   // Fetch gallery entry based on galleryid if provided
   if(isset($_GET["galleryid"])) {
