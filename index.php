@@ -1,5 +1,11 @@
 <?php
+if ($_SERVER['REQUEST_URI'] === '/health') {
+    http_response_code(200);
+    echo "Server is healthy";
+    exit();
+}
   include 'header.php';
+
 ?>
 <!-- style sheet is working properly here for some reason -->
 
