@@ -9,6 +9,6 @@ files:
 permissions:
   - object: /var/www/html/projectstyl
     pattern: "**"
-    owner: ec2-user
-    group: apache
+    owner: root
+    group: root
     mode: 755
