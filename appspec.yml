@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/www/html/projectstyl
+
+permissions:
+  - object: /var/www/html/projectstyl
+    pattern: "**"
+    owner: ec2-user
+    group: apache
+    mode: 755
