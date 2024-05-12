@@ -21,13 +21,14 @@
 <div class="center">
   <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
     <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
-    <button type="submit" id="searchButton">Search</button>
-  </form>
+    
 </div>
 
     <div>     
-      <button id="searchButton">Search</button>     
+<button type="submit" id="searchButton">Search</button>
+  </form>   
     </div>
+    
       <div class="right">
         <?php
           if(isset($_SESSION["useruid"])) {
