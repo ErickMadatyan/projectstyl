@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_URI'] === '/health') {
         <div class="gallery-container">
           <?php
             include_once 'dbh.inc.php';
-            $sql = "SELECT * FROM gallery ORDER BY orderGallery DESC";
+            $sql = "SELECT * FROM gallery ORDER BY votes DESC";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
               echo "SQL STATEMENT FAILED!";
