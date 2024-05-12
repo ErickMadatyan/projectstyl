@@ -88,51 +88,75 @@ ini_set('display_errors', 1);
   </style>
 
 <div class="content-wrap">
-    <div class="column-left">
-        <section class="gallery-links">
-            <div class="wrapper">
-                <div class="gallery-heading">
-                    <h2>Explore</h2>
-                </div>
-                <div class="gallery-container">
-                    <!-- Display highest voted posts -->
-                    <div class="highest-voted">
-                        <h3>Highest Voted</h3>
-                        <?php
-                        include_once 'dbh.inc.php';
-                        $highest_voted_sql = "SELECT * FROM gallery ORDER BY votes DESC LIMIT 5"; // Assuming you want to display top 5 highest voted posts
-                        $highest_voted_result = mysqli_query($conn, $highest_voted_sql);
-                        if (mysqli_num_rows($highest_voted_result) > 0) {
-                            while ($row = mysqli_fetch_assoc($highest_voted_result)) {
-                                // Display highest voted posts using HTML structure similar to index.php
-                            }
-                        } else {
-                            echo "<p>No highest voted posts found.</p>";
-                        }
-                        ?>
-                    </div>
+  <div class="column-left">
+    <section class="gallery-links">
+      <div class="wrapper">
+        <div class="gallery-heading">
+          <h2>Explore</h2>
+        </div>
+        <div class="gallery-container">
+          <!-- Display highest voted posts -->
+          <div class="highest-voted">
+            <h3>Highest Voted</h3>
+            <?php
+            include_once 'dbh.inc.php';
+            $highest_voted_sql = "SELECT * FROM gallery ORDER BY votes DESC LIMIT 5"; // Assuming you want to display top 5 highest voted posts
+            $highest_voted_result = mysqli_query($conn, $highest_voted_sql);
+            if (mysqli_num_rows($highest_voted_result) > 0) {
+              while ($row = mysqli_fetch_assoc($highest_voted_result)) {
+                // Display highest voted posts using HTML structure similar to index.php
+                echo '<a href="items.php?galleryid='.$row["idGallery"].'">';
+                echo '<div class="gallery-image" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>
+                      <div class="item-descriptions">
+                        <h3>'.$row["imageTitle"].'</h3>';
+                // Check and display each item description
+                $items = ["hat", "shirt", "sweater", "jacket", "pants", "shorts", "gloves", "shoes", "socks", "accessory"];
+                foreach ($items as $item) {
+                  if (!empty($row[$item . "DESC"])) {
+                    echo '<p><strong>' . ucfirst($item) . ':</strong> '.$row[$item . "DESC"].'</p>';
+                  }
+                }
+                echo '</div></a>';
+              }
+            } else {
+              echo "<p>No highest voted posts found.</p>";
+            }
+            ?>
+          </div>
 
-                    <!-- Display newest posts -->
-                    <div class="newest-posts">
-                        <h3>Newest Posts</h3>
-                        <?php
-                        $newest_posts_sql = "SELECT * FROM gallery ORDER BY idGallery DESC LIMIT 5"; // Assuming you want to display top 5 newest posts
-                        $newest_posts_result = mysqli_query($conn, $newest_posts_sql);
-                        if (mysqli_num_rows($newest_posts_result) > 0) {
-                            while ($row = mysqli_fetch_assoc($newest_posts_result)) {
-                                // Display newest posts using HTML structure similar to index.php
-                            }
-                        } else {
-                            echo "<p>No newest posts found.</p>";
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+          <!-- Display newest posts -->
+          <div class="newest-posts">
+            <h3>Newest Posts</h3>
+            <?php
+            $newest_posts_sql = "SELECT * FROM gallery ORDER BY idGallery DESC LIMIT 5"; // Assuming you want to display top 5 newest posts
+            $newest_posts_result = mysqli_query($conn, $newest_posts_sql);
+            if (mysqli_num_rows($newest_posts_result) > 0) {
+              while ($row = mysqli_fetch_assoc($newest_posts_result)) {
+                // Display newest posts using HTML structure similar to index.php
+                echo '<a href="items.php?galleryid='.$row["idGallery"].'">';
+                echo '<div class="gallery-image" style="background-image: url(imgs/'.$row["imgFullNameGallery"].');"></div>
+                      <div class="item-descriptions">
+                        <h3>'.$row["imageTitle"].'</h3>';
+                // Check and display each item description
+                foreach ($items as $item) {
+                  if (!empty($row[$item . "DESC"])) {
+                    echo '<p><strong>' . ucfirst($item) . ':</strong> '.$row[$item . "DESC"].'</p>';
+                  }
+                }
+                echo '</div></a>';
+              }
+            } else {
+              echo "<p>No newest posts found.</p>";
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 <?php
 include 'footer.php';
 ?>
+
