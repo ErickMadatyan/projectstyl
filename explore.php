@@ -116,7 +116,7 @@ ini_set('display_errors', 1);
                     <div class="newest-posts">
                         <h3>Newest Posts</h3>
                         <?php
-                        $newest_posts_sql = "SELECT * FROM gallery ORDER BY uploadDate DESC LIMIT 5"; // Assuming you want to display top 5 newest posts
+                        $newest_posts_sql = "SELECT * FROM gallery ORDER BY idGallery DESC LIMIT 5"; // Assuming you want to display top 5 newest posts
                         $newest_posts_result = mysqli_query($conn, $newest_posts_sql);
                         if (mysqli_num_rows($newest_posts_result) > 0) {
                             while ($row = mysqli_fetch_assoc($newest_posts_result)) {
