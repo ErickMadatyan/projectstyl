@@ -18,10 +18,13 @@
     <div class="left">
       <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
     </div>
-    <div class="center">
-      <input type="text" id="searchInput" placeholder="Search...">
-          
-    </div>
+<div class="center">
+  <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
+    <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
+    <button type="submit" id="searchButton">Search</button>
+  </form>
+</div>
+
     <div>     
       <button id="searchButton">Search</button>     
     </div>
