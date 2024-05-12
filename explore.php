@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
 
   .gallery-container .highest-voted,
   .gallery-container .newest-posts {
-    width: 80%; /* Adjust the width as needed */
+    width: 30%; /* Adjust the width as needed */
     margin-bottom: 20px;
   }
 
@@ -36,7 +36,7 @@ ini_set('display_errors', 1);
   }
 
   .gallery-container a .gallery-image {
-    width: 30%;
+    width: 80%;
     height: 200px; /* Adjust the height as needed */
     background-size: contain;
     background-position: center;
