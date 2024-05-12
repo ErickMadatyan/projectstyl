@@ -99,7 +99,8 @@ ini_set('display_errors', 1);
           include_once 'dbh.inc.php';
           if(isset($_GET["query"])) {
             $search_query = mysqli_real_escape_string($conn, $_GET["query"]);
-            $sql = "SELECT * FROM gallery WHERE imageTitle LIKE '%$search_query%' OR hatDESC LIKE '%$search_query%' OR shirtDESC LIKE '%$search_query%' OR ..."; // Add conditions for other description fields
+            $sql = "SELECT * FROM gallery WHERE imageTitle LIKE '%$search_query%' OR hatDESC LIKE '%$search_query%' OR shirtDESC LIKE '%$search_query%' OR sweaterDESC LIKE '%$search_query%' OR jacketDESC LIKE '%$search_query%' OR pantsDESC LIKE '%$search_query%' OR shortsDESC LIKE '%$search_query%' OR glovesDESC LIKE '%$search_query%' OR shoesDESC LIKE '%$search_query%' OR socksDESC LIKE '%$search_query%' OR accessoryDESC LIKE '%$search_query%'";
+
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) > 0) {
