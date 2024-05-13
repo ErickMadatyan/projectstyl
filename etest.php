@@ -100,7 +100,7 @@ body {
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
+  padding: 30px;
 }
 
 .bottom-linker {
