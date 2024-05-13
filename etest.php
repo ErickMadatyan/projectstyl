@@ -102,6 +102,13 @@ body {
   padding: 16px;
 }
 
+.bottom-linker {
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  font-size: 12px;
+  display: inline-block;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -119,7 +126,7 @@ body {
   <a href="upload.php">Upload</a>
   <a href="profile.php">Your Profile</a>
 
-          <div class="bottom-link">  
+          <div class="bottom-linker">  
           <a href="etest.php">About Us</a>
           <a href="tos.php">Terms of Service</a>
           </div>
