@@ -2,8 +2,46 @@
   session_start();
 ?>
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Project STYL</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/86af3d0397.js" crossorigin="anonymous"></script> <!-- fontawesome -->
+
+  
+<!------------ Top Navigation ------------->   
+  <header>
+  <div class="topnav">
+    <div class="left">
+      <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
+    </div>
+<div class="center">
+  <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
+    <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
+    
+</div>
+
+    <div>     
+<button type="submit" id="searchButton">Search</button>
+  </form>   
+    </div>
+    
+      <div class="right">
+        <?php
+          if(isset($_SESSION["useruid"])) {
+            echo '<a href="profile.php" id="loginButton">Profile Page</a>';
+            echo '<a href="logout.inc.php" id="loginButton">Log Out</a>';
+          }
+          else {
+            echo '<a href="signup.php" id="loginButton">Sign Up</a>';
+            echo '<a href="login.php" id="loginButton">Login</a>';
+          }
+        ?>
+      </div>
+  </div>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
