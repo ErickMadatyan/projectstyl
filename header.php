@@ -64,7 +64,7 @@
             </div></a>
         
         <div class="bottom-link">  
-          <a href="about.php">About Us</a>
+          <a href="etest.php">About Us</a>
           <a href="tos.php">Terms of Service</a>
           
           <div class ="center">
