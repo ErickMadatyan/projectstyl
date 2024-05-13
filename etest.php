@@ -94,10 +94,7 @@ body {
   background-color: #444;
 }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
@@ -117,11 +114,7 @@ body {
   <a href="#">Contact</a>
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
-  <h2>Collapsed Sidebar</h2>
-  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-</div>
+
 
 <script>
 function openNav() {
