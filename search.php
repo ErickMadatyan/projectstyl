@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'etest.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ?>
@@ -136,5 +136,5 @@ ini_set('display_errors', 1);
 </div>
 
 <?php
-include 'footer.php';
+include 'footerv2.php';
 ?>
