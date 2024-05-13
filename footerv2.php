@@ -21,8 +21,6 @@
                 </ul>
             </div>
         </div>
-        <div class="unique-footer-bottom">
-            <p>Copyright &copy;2023; Project <span class="unique-footer-designer">STYL</span></p>
-        </div>
+
     </footer>
 </div>
