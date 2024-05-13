@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'etest.php';
 ?>
 
  <div class="content-wrap">
@@ -29,5 +29,5 @@ if(!mysqli_stmt_prepare($stmt, $sql)) {
 
 
 <?php
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
