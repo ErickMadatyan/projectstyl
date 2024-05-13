@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_URI'] === '/health') {
     text-align: center;
     font-size: 1.5em; /* Adjust the font size as needed */
     color: #007BFF; /* Adjust the color as needed */
-    padding-left: 200px;
+ 
   }
       .gallery-heading {
     text-align: center;
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_URI'] === '/health') {
 
   <?php
     if(isset($_SESSION["useruid"])) {
-      echo "<p class='greeting'>Hello There " . $_SESSION["useruid"] . "</p>";
+      echo "<p class='greeting'>Welcome " . $_SESSION["useruid"] . "</p>";
     }
   ?>
 <div class="content-wrap">
