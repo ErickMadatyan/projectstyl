@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_URI'] === '/health') {
     echo "Server is healthy";
     exit();
 }
-  include 'header.php';
+  include 'etest.php';
 
 ?>
 <!-- style sheet is working properly here for some reason -->
