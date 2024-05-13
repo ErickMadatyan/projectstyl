@@ -18,48 +18,48 @@
             display: flex;
             flex-direction: column;
         }
-        footer {
+        .unique-footer {
             background-color: #111;
             margin-top: auto;
         }
-        .footerContainer {
+        .unique-footer-container {
             width: 100%;
             padding: 70px 30px 20px;
         }
-        .socialIcons {
+        .unique-social-icons {
             display: flex;
             justify-content: center;
         }
-        .socialIcons a {
+        .unique-social-icons a {
             text-decoration: none;
             padding: 10px;
             background-color: white;
             margin: 10px;
             border-radius: 50%;
         }
-        .socialIcons a i {
+        .unique-social-icons a i {
             font-size: 2em;
             color: black;
             opacity: 0, 9;
         }
         /* Hover affect on social media icon */
-        .socialIcons a:hover {
+        .unique-social-icons a:hover {
             background-color: #111;
             transition: 0.5s;
         }
-        .socialIcons a:hover i {
+        .unique-social-icons a:hover i {
             color: white;
             transition: 0.5s;
         }
-        .footerNav {
+        .unique-footer-nav {
             margin: 30px 0;
         }
-        .footerNav ul {
+        .unique-footer-nav ul {
             display: flex;
             justify-content: center;
             list-style-type: none;
         }
-        .footerNav ul li a {
+        .unique-footer-nav ul li a {
             color: white;
             margin: 20px;
             text-decoration: none;
@@ -67,18 +67,18 @@
             opacity: 0.7;
             transition: 0.5s;
         }
-        .footerNav ul li a:hover {
+        .unique-footer-nav ul li a:hover {
             opacity: 1;
         }
-        .footerBottom {
+        .unique-footer-bottom {
             background-color: #000;
             padding: 20px;
             text-align: center;
         }
-        .footerBottom p {
+        .unique-footer-bottom p {
             color: white;
         }
-        .designer {
+        .unique-designer {
             opacity: 0.7;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -86,15 +86,15 @@
             margin: 0px 5px;
         }
         @media (max-width: 700px) {
-            .footerNav ul {
+            .unique-footer-nav ul {
                 flex-direction: column;
             }
-            .footerNav ul li {
+            .unique-footer-nav ul li {
                 width: 100%;
                 text-align: center;
                 margin: 10px;
             }
-            .socialIcons a {
+            .unique-social-icons a {
                 padding: 8px;
                 margin: 4px;
             }
@@ -103,16 +103,16 @@
     <title>Footer</title>
 </head>
 <body>
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
+    <footer class="unique-footer">
+        <div class="unique-footer-container">
+            <div class="unique-social-icons">
                 <a href=""><i class="fa-brands fa-facebook"></i></a>
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="footerNav">
+            <div class="unique-footer-nav">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">News</a></li>
@@ -122,8 +122,8 @@
                 </ul>
             </div>
         </div>
-        <div class="footerBottom">
-            <p>Copyright &copy;2023; Project <span class="designer">STYL</span></p>
+        <div class="unique-footer-bottom">
+            <p>Copyright &copy;2023; Project <span class="unique-designer">STYL</span></p>
         </div>
     </footer>
 </body>
