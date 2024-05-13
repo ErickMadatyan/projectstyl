@@ -1,6 +1,6 @@
 <?php
   // Include header with navigation bar
-  include 'header.php';
+  include 'etest.php';
 
   // Establish database connection
   include_once 'dbh.inc.php';
@@ -224,5 +224,5 @@ if(isset($_POST["vote"]) && isset($_POST["galleryid"])) {
   }
 
   // Include footer
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
