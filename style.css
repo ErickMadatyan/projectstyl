@@ -478,9 +478,12 @@ footer{
 }
 
 .unique-footer {
+    position: fixed;
+	bottom: 0;
     background-color: #111;
     margin-top: auto;
     width: 100%;
+	
 }
 
 .unique-footer-container {
