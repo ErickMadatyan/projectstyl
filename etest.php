@@ -118,6 +118,11 @@ body {
   <a href="explore.php">Explore</a>
   <a href="upload.php">Upload</a>
   <a href="profile.php">Your Profile</a>
+
+          <div class="bottom-link">  
+          <a href="etest.php">About Us</a>
+          <a href="tos.php">Terms of Service</a>
+          </div>
 </div>
 
 <div id="main">
