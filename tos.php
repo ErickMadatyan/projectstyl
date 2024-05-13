@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'etest.php';
 ?>
 <!------------ CONTENT ------------->  
     <div class="content-wrap2">
@@ -74,5 +74,5 @@
       </div>
     </div>
 <?php
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
