@@ -5,7 +5,7 @@
 <!------------ CONTENT ------------->
 <div class="content-wrap2">
     <div>
-       <h1>About Us hello comp 424</h1>
+       <h1>About Us</h1>
 
         <h2>Our Mission</h2>
         <p>Project STYL is a fashion-forward initiative dedicated to transforming how individuals express themselves through clothing. Our mission is to break down the barriers of traditional shopping by offering a comprehensive, user-customizable platform that spans a vast array of styles. Whether you're a fan of the minimalist approach or an aficionado of the avant-garde, our platform is designed to cater to your unique fashion sensibilities while providing the convenience of online shopping.</p>
