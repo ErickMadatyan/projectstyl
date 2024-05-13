@@ -151,6 +151,3 @@ function closeNav() {
 </script>
    
 </body>
-<?php
-  include 'footerv2.php';
-?>
