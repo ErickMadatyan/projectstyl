@@ -15,9 +15,7 @@
 <!------------ Top Navigation ------------->   
   <header>
   <div class="topnav">
-    <div class="left">
-      <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
-    </div>
+
 <div class="center">
   <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
     <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
@@ -111,6 +109,7 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
