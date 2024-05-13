@@ -19,7 +19,8 @@
 <div class="center">
   <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
     <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
-    
+  </div>
+    <div>
    
 <button type="submit" id="searchButton">Search</button>
   </form>   
