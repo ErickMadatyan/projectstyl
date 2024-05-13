@@ -18,3 +18,4 @@
         </div>
     </footer>
 </div>
+<script src="script.js"></script>
