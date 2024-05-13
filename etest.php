@@ -150,4 +150,6 @@ function closeNav() {
 </script>
    
 </body>
-</html> 
+<?php
+  include 'footer.php';
+?>
