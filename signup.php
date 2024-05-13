@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'etest.php';
 ?>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!------------ CONTENT ------------->   
@@ -93,5 +93,5 @@ include 'header.php';
 </style>
 
 <?php
-include 'footer.php';
+include 'footerv2.php';
 ?>
