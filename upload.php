@@ -66,5 +66,5 @@ Select an image
 </body>
 
 <?php
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
