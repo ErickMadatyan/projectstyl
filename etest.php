@@ -114,10 +114,10 @@ body {
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="index.php">Home</a>
+  <a href="explore.php">Explore</a>
+  <a href="upload.php">Upload</a>
+  <a href="profile.php">Your Profile</a>
 </div>
 
 <div id="main">
