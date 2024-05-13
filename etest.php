@@ -45,6 +45,9 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.topnav {
+  padding-left: 35%;
+}
 .sidebar {
   height: 100%;
   width: 0;
