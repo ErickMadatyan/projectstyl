@@ -6,7 +6,17 @@ ini_set('display_errors', 1);
 
 <!-- Style sheet -->
 <style>
-  /* Your CSS styles for the explore page here */
+ 
+        .gallery-heading {
+    text-align: center;
+    margin-bottom: 20px; /* You can adjust this margin as needed */
+    font-siz
+  }
+      .gallery-heading h2 {
+    font-size: 2.5em; /* Adjust the font size as needed */
+    font-family: 'Your_Nice_Font', sans-serif; /* Replace 'Your_Nice_Font' with the desired font */
+    color: #007BFF; /* Adjust the color as needed */
+      }
   .gallery-container {
     display: flex;
     flex-wrap: wrap;
