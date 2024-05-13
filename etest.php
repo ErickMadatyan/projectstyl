@@ -86,6 +86,8 @@ body {
   color: white;
   padding: 10px 15px;
   border: none;
+  position: fixed;
+  z-index: 2;
 }
 
 .openbtn:hover {
