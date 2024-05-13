@@ -19,10 +19,8 @@
 <div class="center">
   <form action="search.php" method="GET"> <!-- Change action to point to your search handling PHP file -->
     <input type="text" name="query" id="searchInput" placeholder="Search..."> <!-- Change input name to 'query' -->
-    <button type="submit" id="searchButton">Search</button>
-  </form>
+    
 </div>
-
 
     <div>     
 <button type="submit" id="searchButton">Search</button>
@@ -47,16 +45,7 @@
 body {
   font-family: "Lato", sans-serif;
 }
-.center {
-  text-align: center; /* Center align the content */
-  margin-top: 20px; /* Adjust as needed */
-}
 
-#searchInput {
-  width: 300px; /* Set the width of the input field */
-  padding: 10px; /* Adjust padding as needed */
-  border-radius: 5px; /* Add some border radius for styling */
-}
 .sidebar {
   height: 100%;
   width: 0;
