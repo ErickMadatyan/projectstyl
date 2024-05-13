@@ -128,7 +128,7 @@ body {
   <a href="profile.php">Your Profile</a>
 
           <div class="bottom-linker">  
-          <a href="etest.php">About Us</a>
+          <a href="about.php">About Us</a>
           <a href="tos.php">Terms of Service</a>
           </div>
 </div>
