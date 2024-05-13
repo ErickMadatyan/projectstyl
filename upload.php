@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'etest.php';
 require_once 'dbh.inc.php';
 ?>
 <!------------ CONTENT ------------->  
