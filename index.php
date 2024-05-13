@@ -149,5 +149,5 @@ if ($_SERVER['REQUEST_URI'] === '/health') {
       
 
 <?php
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
