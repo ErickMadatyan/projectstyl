@@ -94,7 +94,10 @@ body {
   background-color: #444;
 }
 
-
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
@@ -114,7 +117,10 @@ body {
   <a href="#">Contact</a>
 </div>
 
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
 
+</div>
 
 <script>
 function openNav() {
