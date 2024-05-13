@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'etest.php';
 ?>
 <!------------ CONTENT ------------->   
 <section class="signup-form">
@@ -31,5 +31,5 @@
 
 
 <?php
-  include 'footer.php';
+  include 'footerv2.php';
 ?>
