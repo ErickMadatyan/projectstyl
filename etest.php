@@ -49,7 +49,7 @@ body {
 .topnav {
   padding-left: 35%;
 }
-.sidebar {
+.sidebarv2 {
   height: 100%;
   width: 0;
   position: fixed;
@@ -62,7 +62,7 @@ body {
   padding-top: 60px;
 }
 
-.sidebar a {
+.sidebarv2 a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -71,11 +71,11 @@ body {
   transition: 0.3s;
 }
 
-.sidebar a:hover {
+.sidebarv2 a:hover {
   color: #f1f1f1;
 }
 
-.sidebar .closebtn {
+.sidebarv2 .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
@@ -112,14 +112,14 @@ body {
 }
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidebarv2 {padding-top: 15px;}
+  .sidebarv2 a {font-size: 18px;}
 }
 </style>
 </head>
 <body>
 
-<div id="mySidebar" class="sidebar">
+<div id="mySidebar" class="sidebarv2">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <a href="#"><img src="https://cdn.glitch.global/4ac967db-08b7-4f2f-9f47-431c462bd179/logo2.png?v=1697079907040" alt="Logo" width="200px">             </a>
   <a href="index.php">Home</a>
