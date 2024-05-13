@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'etest.php';
 require_once 'dbh.inc.php';
 ?>
 
@@ -147,7 +147,7 @@ require_once 'dbh.inc.php';
       </section>
 
       <?php
-        include 'footer.php';
+        include 'footerv2.php';
       ?>
     </div>
   </div>
