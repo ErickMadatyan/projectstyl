@@ -1,5 +1,5 @@
 <?php
-  include 'etest.php';
+  include 'header.php';
 require_once 'dbh.inc.php';
 ?>
 <!------------ CONTENT ------------->  
@@ -66,5 +66,5 @@ Select an image
 </body>
 
 <?php
-  include 'footerv2.php';
+  include 'footer.php';
 ?>
